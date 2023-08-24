@@ -12,23 +12,38 @@ type TeamList = {
     nfl: Team[];
 };
 
-type thresh = number | 0.4;
+type Options = {
+    threshold?: number;
+    full?: boolean;
+};
 
 /**
  * Perform a fuzzy search on the team list.
  * @param {keyof TeamList} sport - The sport to search for.
  * @param {string} query - The query string to search for.
- * @param {number} [threshold=0.4] - The threshold for fuzzy matching. 0 is a perfect match - 1 is a wide range. Defaults to 0.4 if not provided.
- * @returns {string | null} - The matched team name, or null if no match is found.
+ * @param {Options} [options] - The options object for customizing the search behavior.
+ * @returns {string | Team | null} - The matched team name, team object, or null if no match is found.
  */
-export default function teamResolver(sport: keyof TeamList, query: string, threshold?: number): string | null {
-    if (threshold === undefined) {
-            threshold = 0.4
+export default function teamResolver(sport: keyof TeamList, query: string, options?: Options): string | Team | null {
+
+    if (!options) {
+        options = {
+            threshold: 0.4,
+            full: false,
+        };
+    } else {
+        if (options.threshold === undefined) {
+            options.threshold = 0.4;
         }
-    const options = {
+        if (options.full === undefined) {
+            options.full = false;
+        }
+    }
+    
+    const searchOptions = {
         isCaseSensitive: false,
         shouldSort: true,
-        threshold,
+        threshold: options.threshold,
         location: 0,
         distance: 100,
         maxPatternLength: 32,
@@ -37,8 +52,12 @@ export default function teamResolver(sport: keyof TeamList, query: string, thres
     };
 
     const teams = teamList[sport];
-    const fuse = new Fuse(teams, options);
+    const fuse = new Fuse(teams, searchOptions);
     const result = fuse.search(query);
 
-    return result.length > 0 ? result[0].item.name : null;
+    if (result.length > 0) {
+        return options.full ? result[0].item : result[0].item.name;
+    } else {
+        return null;
+    }
 }
