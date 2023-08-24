@@ -32,7 +32,8 @@ describe('teamResolver', () => {
   });
 
   it('get full object of team info', () => {
-    const result = teamResolver('nba', 'BOS', { full: true });
+    const result = teamResolver('nba', 'Boston Celtics', { full: true });
+    console.log(result)
     expect(result).toEqual(        {
           name: 'Boston Celtics',
           colors: ['#007A33', '#BA9653', '#000000'],
