@@ -30,4 +30,14 @@ describe('teamResolver', () => {
     const result = teamResolver('nba', 'xyz');
     expect(result).toBeNull();
   });
+
+  it('get full object of team info', () => {
+    const result = teamResolver('nba', 'BOS', { full: true });
+    expect(result).toEqual(        {
+          name: 'Boston Celtics',
+          colors: ['#007A33', '#BA9653', '#000000'],
+          nicknames: ['celtics', 'boston', 'bos', 'celt'],
+        }
+    )
+  });
 });
