@@ -12,7 +12,7 @@
 
 ---
 
-<p align="center"> Quickly resolve sports team's names
+<p align="center"> Quickly resolve sports team information
     <br> 
 </p>
 
@@ -24,7 +24,7 @@
 
 
 ## 🧐 About
-Resolve Team is a sports team name resolver that returns to you the name of the team via fuzzy search, using FuseJS.
+Resolve Team is a sports team name resolver that returns to you the name or info of the team via fuzzy search, using FuseJS. Quickly take a nickname such as `BOS` to get the full name, `Boston Celtics` -- or receive the nicknames and colors of the team.
 
 This module was created as I was unable to locate anything similar, and had this implmented in an existing project.
 
@@ -55,7 +55,7 @@ npm i resolve-team
 | Property   | Type    | Default | Description                                   |
 | ---------- | ------- | ------- | --------------------------------------------- |
 | threshold  | number  | 0.4     | Controls the FuseJS search threshold (0-1).   |
-| full       | boolean | false   | If true, returns the full team object.        |
+| full       | boolean | false   | If true, returns the full team info object.        |
 
 - `threshold`: Accepts a number between 0 and 1 which controls the search sensitivity. Lower values are stricter matches.
 - `full`: If set to true, returns the full team object instead of just the name.
