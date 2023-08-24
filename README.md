@@ -16,21 +16,19 @@
     <br> 
 </p>
 
-## 📝 Table of Contents
+  - [🧐 About](#🧐-About)
+  - [🎈 Usage](#🎈-Usage)
+  - [⛏️ Built Using](#⛏️-Built-Using)
+  - [✍️ Authors](#✍️-Authors)
 
-- [About](#about)
-- [Install](#install)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [Authors](#authors)
 
-## 🧐 About <a name = "about"></a>
 
+## 🧐 About
 Resolve Team is a sports team name resolver that returns to you the name of the team via fuzzy search, using FuseJS.
 
 This module was created as I was unable to locate anything similar, and had this implmented in an existing project.
 
-### Installing <a name = 'install'></a>
+### Installing
 
 Simply run the following command
 
@@ -38,42 +36,65 @@ Simply run the following command
 npm i resolve-team
 ```
 
-
-## 🎈 Usage <a name="usage"></a>
+# 🎈 Usage
 
 ### Parameters
 
-`teamResolver` accepts 3 parameters, with the third one beingoptional:
+`teamResolver` accepts 3 parameters, with the third one being optional:
 
+| Parameter  | Type   | Description               |
+| ---------- | ------ | ------------------------- |
+| sport      | string | 'nba' or 'nfl'            |
+| query      | string | Team name or abbreviation |
+| options    | object | Customization options     |
 
-| Parameter      | Type | Description
-| ----------- |  ----------- |  ----------- |
-| sport     | string | 'nba' or 'nfl' |
-| name   | string | team
-| threshold | number | 0 - 1
+### Options
 
-- `threshold` accepts a number between 0 to 1 which controls the FuseJS threshold. <b>By default, it is 0.4</b> You should be fine most of the time not provding a treshoold value. 
-	- 0 is a perfect match, while 1 is a very broad range
-<br/>
+`options` is an object with the following properties:
+
+| Property   | Type    | Default | Description                                   |
+| ---------- | ------- | ------- | --------------------------------------------- |
+| threshold  | number  | 0.4     | Controls the FuseJS search threshold (0-1).   |
+| full       | boolean | false   | If true, returns the full team object.        |
+
+- `threshold`: Accepts a number between 0 and 1 which controls the search sensitivity. Lower values are stricter matches.
+- `full`: If set to true, returns the full team object instead of just the name.
+
+### Examples
 
 ```js
-
 import teamResolver from 'resolve-team'
 
-// Example 1 | Using the nickname
+// Example 1: Using the team abbreviation
+const team1 = teamResolver('nba', 'BOS');
+console.log(team1); // => 'Boston Celtics'
 
-const team = teamResolver(`nba`, `BOS`)
+// Example 2: Using a partial team name
+const team2 = teamResolver('nfl', 'New Y');
+console.log(team2); // => 'New York Giants'
 
-console.log(team) // => `Boston Celtics`
+// Example 3: Customizing the search threshold
+const options = { threshold: 0.6 };
+const team3 = teamResolver('nba', 'Warrios', options);
+console.log(team3); // => 'Golden State Warriors'
+
+// Example 4: Getting the full team object
+const options = { full: true };
+const team4 = teamResolver('nfl', 'CHI', fullTeamOptions);
+console.log(team4); 
+
+/**  Returns =>
+{
+name: 'Chicago Bears',
+colors: ['#0B162A', '#C83803'],
+nicknames: ['bears', 'chicago', 'chi'],
 
 
-// Example 2 | Using the abbrevation
-
-const team = teamResolver(`nba`, `LA`)
-
-console.log(team) // => `Los Angeles Lakers`
+}
+**/
 ```
-## ⛏️ Built Using <a name = "built_using"></a>
+
+## ⛏️ Built Using
 
 ### Dependencies
 
@@ -83,6 +104,6 @@ console.log(team) // => `Los Angeles Lakers`
 ### Dev Dependencies
 - [@types/node](https://www.npmjs.com/package/@types/node)
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Authors
 
 - [@fearandesire](https://github.com/fearandesire) - Creator
