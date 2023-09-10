@@ -88,8 +88,6 @@ console.log(team4);
 name: 'Chicago Bears',
 colors: ['#0B162A', '#C83803'],
 nicknames: ['bears', 'chicago', 'chi'],
-
-
 }
 **/
 ```
