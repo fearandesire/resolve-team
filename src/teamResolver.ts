@@ -48,7 +48,7 @@ export default function teamResolver(sport: keyof TeamList, query: string, optio
         distance: 100,
         maxPatternLength: 32,
         minMatchCharLength: 1,
-        keys: ['name', 'nicknames'],
+        keys: ['name', 'nicknames', 'abbrev'],
     };
 
     const teams = teamList[sport];
