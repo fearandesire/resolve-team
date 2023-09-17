@@ -66,28 +66,25 @@ npm i resolve-team
 import teamResolver from 'resolve-team'
 
 // Example 1: Using the team abbreviation
-const team1 = teamResolver('nba', 'BOS');
-console.log(team1); // => 'Boston Celtics'
+const team1 = teamResolver('nba', 'BOS'); // => 'Boston Celtics'
 
 // Example 2: Using a partial team name
-const team2 = teamResolver('nfl', 'New Y');
-console.log(team2); // => 'New York Giants'
+const team2 = teamResolver('nfl', 'New Y'); // => 'New York Giants'
 
 // Example 3: Customizing the search threshold
 const options = { threshold: 0.6 };
-const team3 = teamResolver('nba', 'Warrios', options);
-console.log(team3); // => 'Golden State Warriors'
+const team3 = teamResolver('nba', 'Warrios', options); // => 'Golden State Warriors'
 
 // Example 4: Getting the full team object
 const options = { full: true };
 const team4 = teamResolver('nfl', 'CHI', fullTeamOptions);
-console.log(team4); 
 
 /**  Returns =>
 {
 name: 'Chicago Bears',
 colors: ['#0B162A', '#C83803'],
 nicknames: ['bears', 'chicago', 'chi'],
+abbrev: ['CHI']
 }
 **/
 ```
