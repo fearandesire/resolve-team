@@ -12,7 +12,19 @@
 
 <p align="center"> An intuitive sports team name / details resolver using fuzzy search. </p>
 
+## 🚨 Breaking Changes in v1.2 🚨
+We've made some significant improvements in version 1.2! Here's what you need to know:
+
+### Changed Default Import
+The default export has been changed from 'teamResolver' to 'resolveTeam'
+- **Old**: `import teamResolver from 'resolve-team'`
+  
+- **New**: `import resolveTeam from 'resolve-team'`
+
+
 ## Table of Contents
+- [🚨 Breaking Changes in v1.2 🚨](#-breaking-changes-in-v12-)
+  - [Changed Default Import](#changed-default-import)
 - [Table of Contents](#table-of-contents)
 - [About Resolve Team](#about-resolve-team)
 - [Getting Started](#getting-started)
