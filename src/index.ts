@@ -20,11 +20,11 @@ type Options = {
 
 type SearchResult = Team | string | null;
 
-function validateInputs(query: string, sport: string | 'all'): string | null {
+function validateInputs(team: string, sport: string | 'all'): string | null {
     if (!(sport in teamList) && sport !== 'all') {
         return 'Invalid sport category. Please choose from ' + Object.keys(teamList).join(', ') + '.';
     }
-    if (typeof query !== 'string' || query.trim().length === 0) {
+    if (typeof team !== 'string' || team.trim().length === 0) {
         return 'Invalid query. Please provide a non-empty string.';
     }
     return null;

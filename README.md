@@ -46,13 +46,12 @@ The default export has been changed from 'teamResolver' to 'resolveTeam'
 ### API Param Change
 The API has updated the order of parameters.
 
-- **Old**: `resolveTeam(sport, query, options)`
+- **Old**: `resolveTeam(sport, team, options)`
 
-- **New**: `resolveTeam(query, sport, options)`
+- **New**: `resolveTeam(team, options)`
 
 ### Search All Sports
-`sport` parameter now supports the option `all` to search all supported sports.
-**If no sport is provided, `sport` defaults to `all`.**
+`sport` parameter has moved into `options` and **by default, it is set to search `all` sports if one is not provided.**
 
 ## About Resolve Team
 Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
@@ -80,12 +79,11 @@ npm install resolve-team
 
 ### Parameters
 
-`teamResolver` function accepts the following parameters:
+The `teamResolver` API accepts the following parameters:
 
 | Parameter | Type   | Description                           |
 |-----------|--------|---------------------------------------|
-| sport     | string | The sport category ('nba' or 'nfl').  |
-| query     | string | Team name or abbreviation to search.  |
+| team     | string | Team name or abbreviation to search.  |
 | options   | object | (Optional) Customization options.     |
 
 ### Options
@@ -94,6 +92,7 @@ Customize your search with the following options:
 
 | Property  | Type    | Default | Description                               |
 |-----------|---------|---------|-------------------------------------------|
+| sport     | string  | 'all'   | The sport category ('nba' or 'nfl').    |
 | threshold | number  | 0.4     | Search sensitivity (0-1). Lower is stricter. |
 | full      | boolean | false   | If true, returns the complete team object.   |
 
@@ -104,14 +103,25 @@ Customize your search with the following options:
 import teamResolver from 'resolve-team';
 
 // Basic name resolution
-const nbaTeam = teamResolver('nba', 'BOS'); // 'Boston Celtics'
+const nbaTeam = teamResolver(`Bos`); // 'Boston Celtics'
 
-// Fuzzy search with threshold
-const nflTeam = teamResolver('nfl', 'New Y', { threshold: 0.6 }); // 'New York Giants'
+// Fuzzy search
+const nflTeam = teamResolver('gia'); // 'New York Giants'
 
 // Full team object
-const fullTeam = teamResolver('nfl', 'CHI', { full: true });
-// Returns full Chicago Bears team object
+const fullTeam = teamResolver('celtics', { full: true });
+/**
+ // Resolves to:
+ {
+  name: 'Boston Celtics',
+  colors: ['#007A33', '#BA9653', '#000000'],
+  nicknames: ['celtics', 'boston', 'bos', 'celt'],
+  abbrev: ['BOS']
+ }
+ */
+
+// Limit to sport
+const nbaTeam2 = teamResolver('nyk', { sport: 'nba' }); // 'New York Knicks'
 ```
 
 ## Built With
