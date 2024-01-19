@@ -23,14 +23,8 @@ type SearchResult = {
     error?: string;
 };
 
-/**
- * Validate inputs and return a formatted error message if invalid.
- * @param {string} sport - The sport category.
- * @param {string} query - The search query.
- * @returns {string | null} - Error message or null if valid.
- */
-function validateInputs(sport: keyof TeamList, query: string): string | null {
-    if (!teamList[sport]) {
+function validateInputs(sport: string, query: string): string | null {
+    if (!(sport in teamList)) {
         return 'Invalid sport category. Please choose from ' + Object.keys(teamList).join(', ') + '.';
     }
     if (typeof query !== 'string' || query.trim().length === 0) {
@@ -39,13 +33,7 @@ function validateInputs(sport: keyof TeamList, query: string): string | null {
     return null;
 }
 
-/**
- * Initializes Fuse.js with the provided options and team data.
- * @param {keyof TeamList} sport - The sport category.
- * @param {Options} options - Search options.
- * @returns {Fuse} - The initialized Fuse instance.
- */
-function initializeFuse(sport: keyof TeamList, options: Options): Fuse<Team> {
+function initializeFuse(sport: string, options: Options): Fuse<Team> {
     const searchOptions = {
         isCaseSensitive: false,
         shouldSort: true,
@@ -57,18 +45,10 @@ function initializeFuse(sport: keyof TeamList, options: Options): Fuse<Team> {
         keys: ['name', 'nicknames', 'abbrev'],
     };
 
-    return new Fuse(teamList[sport], searchOptions);
+    return new Fuse(teamList[sport as keyof TeamList], searchOptions);
 }
 
-/**
- * Perform a fuzzy search on the team list.
- * @param {keyof TeamList} sport - The sport to search for.
- * @param {string} query - The query string to search for.
- * @param {Options} [options={ threshold: 0.4, full: false }] - The options object for customizing the search behavior.
- * @returns {SearchResult} - The search result.
- */
-export default function resolveTeam<T extends keyof TeamList>(sport: T, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
-    
+export default function resolveTeam(sport: string, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
     const errorMessage = validateInputs(sport, query);
     if (errorMessage) {
         return { team: null, success: false, error: errorMessage };
