@@ -7,7 +7,6 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
-		"prepublish": "tsc",
 		"test": "jest"
 	},
 	"keywords": [
