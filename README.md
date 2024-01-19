@@ -1,104 +1,108 @@
 <p align="center">
-
+  <img src="logo.png" alt="Resolve Team Logo">
 </p>
 
-<h3 align="center">Resolve Team</h3>
+<h1 align="center">Resolve Team</h1>
 
 <div align="center">
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![npm version](https://img.shields.io/npm/v/resolve-team.svg?style=flat)](https://www.npmjs.com/package/resolve-team)
+[![Build Status](https://img.shields.io/travis/fearandesire/resolve-team/master.svg?style=flat)](https://travis-ci.org/fearandesire/resolve-team)
 
 </div>
 
 ---
 
-<p align="center"> Quickly resolve sports team information
-    <br> 
-</p>
+<p align="center"> An intuitive sports team name resolver using fuzzy search. </p>
 
-  - [🧐 About](#🧐-About)
-  - [🎈 Usage](#🎈-Usage)
-  - [⛏️ Built Using](#⛏️-Built-Using)
-  - [✍️ Authors](#✍️-Authors)
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [About Resolve Team](#about-resolve-team)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [Usage, Parameters, and Options](#usage-parameters-and-options)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Options](#options)
+  - [Examples](#examples)
+- [Built With](#built-with)
+  - [Contributing, Authors, and License](#contributing-authors-and-license)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+- [Back To The Top](#back-to-the-top)
 
 
+## About Resolve Team
+Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
 
-## 🧐 About
-Resolve Team is a sports team name resolver that returns to you the name or info of the team via fuzzy search, using FuseJS. Quickly take a nickname such as `BOS` to get the full name, `Boston Celtics` -- or receive the nicknames and colors of the team.
 
-This module was created as I was unable to locate anything similar, and had this implmented in an existing project.
+## Getting Started
 
-### Installing
+### Installation
+To use Resolve Team in your project, install it via npm:
 
-Simply run the following command
-
+```bash
+npm install resolve-team
 ```
-npm i resolve-team
-```
 
-# 🎈 Usage
+
+## Usage, Parameters, and Options
+
+### Usage
 
 ### Parameters
 
-`teamResolver` accepts 3 parameters, with the third one being optional:
+`teamResolver` function accepts the following parameters:
 
-| Parameter  | Type   | Description               |
-| ---------- | ------ | ------------------------- |
-| sport      | string | 'nba' or 'nfl'            |
-| query      | string | Team name or abbreviation |
-| options    | object | Customization options     |
+| Parameter | Type   | Description                           |
+|-----------|--------|---------------------------------------|
+| sport     | string | The sport category ('nba' or 'nfl').  |
+| query     | string | Team name or abbreviation to search.  |
+| options   | object | (Optional) Customization options.     |
 
 ### Options
 
-`options` is an object with the following properties:
+Customize your search with the following options:
 
-| Property   | Type    | Default | Description                                   |
-| ---------- | ------- | ------- | --------------------------------------------- |
-| threshold  | number  | 0.4     | Controls the FuseJS search threshold (0-1).   |
-| full       | boolean | false   | If true, returns the full team info object.        |
+| Property  | Type    | Default | Description                               |
+|-----------|---------|---------|-------------------------------------------|
+| threshold | number  | 0.4     | Search sensitivity (0-1). Lower is stricter. |
+| full      | boolean | false   | If true, returns the complete team object.   |
 
-- `threshold`: Accepts a number between 0 and 1 which controls the search sensitivity. Lower values are stricter matches.
-- `full`: If set to true, returns the full team object instead of just the name.
 
 ### Examples
 
 ```js
-import teamResolver from 'resolve-team'
+import teamResolver from 'resolve-team';
 
-// Example 1: Using the team abbreviation
-const team1 = teamResolver('nba', 'BOS'); // => 'Boston Celtics'
+// Basic name resolution
+const nbaTeam = teamResolver('nba', 'BOS'); // 'Boston Celtics'
 
-// Example 2: Using a partial team name
-const team2 = teamResolver('nfl', 'New Y'); // => 'New York Giants'
+// Fuzzy search with threshold
+const nflTeam = teamResolver('nfl', 'New Y', { threshold: 0.6 }); // 'New York Giants'
 
-// Example 3: Customizing the search threshold
-const options = { threshold: 0.6 };
-const team3 = teamResolver('nba', 'Warrios', options); // => 'Golden State Warriors'
-
-// Example 4: Getting the full team object
-const options = { full: true };
-const team4 = teamResolver('nfl', 'CHI', fullTeamOptions);
-
-/**  Returns =>
-{
-name: 'Chicago Bears',
-colors: ['#0B162A', '#C83803'],
-nicknames: ['bears', 'chicago', 'chi'],
-abbrev: ['CHI']
-}
-**/
+// Full team object
+const fullTeam = teamResolver('nfl', 'CHI', { full: true });
+// Returns full Chicago Bears team object
 ```
 
-## ⛏️ Built Using
+## Built With
+Fuse.js - Fuzzy search library
+TypeScript - JavaScript with syntax for types
 
-### Dependencies
 
-- [fuse.js](https://www.npmjs.com/package/fuse)
-- [typescript](https://www.npmjs.com/package/typescript)
+### Contributing, Authors, and License
 
-### Dev Dependencies
-- [@types/node](https://www.npmjs.com/package/@types/node)
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## ✍️ Authors
+## Authors
+- [@fearandesire](https://github.com/fearandesire) - Initial work
 
-- [@fearandesire](https://github.com/fearandesire) - Creator
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## [Back To The Top](#table-of-contents)
