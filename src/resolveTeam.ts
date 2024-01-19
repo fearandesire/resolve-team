@@ -18,7 +18,7 @@ type Options = {
 };
 
 // Updated SearchResult type
-type SearchResult = Team | string | Error;
+type SearchResult = Team | string | null;
 
 function validateInputs(sport: string, query: string): string | null {
     if (!(sport in teamList)) {
@@ -48,7 +48,7 @@ function initializeFuse(sport: string, options: Options): Fuse<Team> {
 export default function resolveTeam(sport: string, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
     const errorMessage = validateInputs(sport, query);
     if (errorMessage) {
-        return new Error(errorMessage);
+     return null
     }
 
     const fuse = initializeFuse(sport, options);
@@ -57,6 +57,6 @@ export default function resolveTeam(sport: string, query: string, options: Optio
     if (result.length > 0) {
         return options.full ? result[0].item : result[0].item.name;
     } else {
-        return new Error('No matching team found.');
+        return null
     }
 }
