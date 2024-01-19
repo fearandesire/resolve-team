@@ -67,7 +67,7 @@ function initializeFuse(sport: keyof TeamList, options: Options): Fuse<Team> {
  * @param {Options} [options={ threshold: 0.4, full: false }] - The options object for customizing the search behavior.
  * @returns {SearchResult} - The search result.
  */
-export default function teamResolver<T extends keyof TeamList>(sport: T, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
+export default function resolveTeam<T extends keyof TeamList>(sport: T, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
     
     const errorMessage = validateInputs(sport, query);
     if (errorMessage) {
