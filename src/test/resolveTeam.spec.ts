@@ -1,5 +1,4 @@
-import teamList from '../teamlist';
-import resolveTeam from '../resolveTeam'; // Adjust the import path as needed
+import resolveTeam from '../index.js'; // Adjust the import path as needed
 
 // Mock teamList for testing
 // Assuming teamList has a similar structure to this

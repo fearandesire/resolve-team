@@ -15,8 +15,10 @@
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
-- [🚨 Breaking Changes in v1.2 🚨](#-breaking-changes-in-v12-)
+- [🚨 Breaking Changes in v1.4 🚨](#-breaking-changes-in-v14-)
   - [Changed Default Import](#changed-default-import)
+  - [API Param Change](#api-param-change)
+  - [Search All Sports](#search-all-sports)
 - [About Resolve Team](#about-resolve-team)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
@@ -32,14 +34,25 @@
 - [License](#license)
 - [Back To The Top](#back-to-the-top)
 
-## 🚨 Breaking Changes in v1.2 🚨
-We've made some significant improvements in version 1.2! Here's what you need to know:
+## 🚨 Breaking Changes in v1.4 🚨
+We've made some significant improvements in version 1.4! Here's what you need to know:
 
 ### Changed Default Import
 The default export has been changed from 'teamResolver' to 'resolveTeam'
 - **Old**: `import teamResolver from 'resolve-team'`
   
 - **New**: `import resolveTeam from 'resolve-team'`
+
+### API Param Change
+The API has updated the order of parameters.
+
+- **Old**: `resolveTeam(sport, query, options)`
+
+- **New**: `resolveTeam(query, sport, options)`
+
+### Search All Sports
+`sport` parameter now supports the option `all` to search all supported sports.
+**If no sport is provided, `sport` defaults to `all`.**
 
 ## About Resolve Team
 Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
