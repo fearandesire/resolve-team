@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="logo.png" alt="Resolve Team Logo">
-</p>
-
 <h1 align="center">Resolve Team</h1>
 
 <div align="center">
@@ -14,7 +10,7 @@
 
 ---
 
-<p align="center"> An intuitive sports team name resolver using fuzzy search. </p>
+<p align="center"> An intuitive sports team name / details resolver using fuzzy search. </p>
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -36,6 +32,12 @@
 
 ## About Resolve Team
 Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
+
+Currently resolves the following team information:
+- Name
+- Nicknames
+- Abbreviations
+- Colors
 
 
 ## Getting Started
