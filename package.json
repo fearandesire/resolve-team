@@ -1,6 +1,6 @@
 {
 	"name": "resolve-team",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Resolve NBA & NFL sports team names via fuzzy search (FuseJS)",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
