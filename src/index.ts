@@ -13,7 +13,7 @@ type TeamList = {
 };
 
 type Options = {
-    sport: string | 'all';
+    sport?: string | 'all';
     threshold?: number;
     full?: boolean;
 };
