@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import teamList from './teamlist';
+import teamList from './teamlist.js';
 
 type Team = {
     name: string;
