@@ -4,7 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![npm version](https://img.shields.io/npm/v/resolve-team.svg?style=flat)](https://www.npmjs.com/package/resolve-team)
-[![Build Status](https://img.shields.io/travis/fearandesire/resolve-team/master.svg?style=flat)](https://travis-ci.org/fearandesire/resolve-team)
 
 </div>
 
