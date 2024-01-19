@@ -1,3 +1,3 @@
-import resolveTeam from "./resolveTeam.js";
+import resolveTeam from "./resolveTeam";
 
 export default resolveTeam;
