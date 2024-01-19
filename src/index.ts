@@ -13,13 +13,14 @@ type TeamList = {
 };
 
 type Options = {
+    sport: string | 'all';
     threshold?: number;
     full?: boolean;
 };
 
 type SearchResult = Team | string | null;
 
-function validateInputs(query: string, sport: string | 'all', ): string | null {
+function validateInputs(query: string, sport: string | 'all'): string | null {
     if (!(sport in teamList) && sport !== 'all') {
         return 'Invalid sport category. Please choose from ' + Object.keys(teamList).join(', ') + '.';
     }
@@ -29,8 +30,9 @@ function validateInputs(query: string, sport: string | 'all', ): string | null {
     return null;
 }
 
-function initializeFuse(sport: string, options: Options): Fuse<Team> {
-    const combinedTeams = sport === 'all'
+function initializeFuse(options: Options): Fuse<Team> {
+    const { sport } = options;
+    const combinedTeams =  sport === 'all'
         ? Object.values(teamList).flat()
         : teamList[sport as keyof TeamList];
 
@@ -49,12 +51,12 @@ function initializeFuse(sport: string, options: Options): Fuse<Team> {
 }
 
 
-export default function resolveTeam(query: string, sport: string,  options: Options = { threshold: 0.4, full: false }): SearchResult {
-    const errorMessage = validateInputs(query, sport);
+export default function resolveTeam(query: string, options: Options = { sport: 'all', threshold: 0.4, full: false }): SearchResult {
+    const errorMessage = validateInputs(query, options.sport);
     if (errorMessage) {
      return null
     }
-    const fuse = initializeFuse(sport, options);
+    const fuse = initializeFuse(options);
     const result = fuse.search(query);
 
     if (result.length > 0) {
