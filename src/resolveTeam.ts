@@ -17,11 +17,8 @@ type Options = {
     full?: boolean;
 };
 
-type SearchResult = {
-    team: Team | string | null;
-    success: boolean;
-    error?: string;
-};
+// Updated SearchResult type
+type SearchResult = Team | string | Error;
 
 function validateInputs(sport: string, query: string): string | null {
     if (!(sport in teamList)) {
@@ -51,16 +48,15 @@ function initializeFuse(sport: string, options: Options): Fuse<Team> {
 export default function resolveTeam(sport: string, query: string, options: Options = { threshold: 0.4, full: false }): SearchResult {
     const errorMessage = validateInputs(sport, query);
     if (errorMessage) {
-        return { team: null, success: false, error: errorMessage };
+        return new Error(errorMessage);
     }
 
     const fuse = initializeFuse(sport, options);
     const result = fuse.search(query);
 
     if (result.length > 0) {
-        const teamResult = options.full ? result[0].item : result[0].item.name;
-        return { team: teamResult, success: true };
+        return options.full ? result[0].item : result[0].item.name;
     } else {
-        return { team: null, success: false, error: 'No matching team found.' };
+        return new Error('No matching team found.');
     }
 }
