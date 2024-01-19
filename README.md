@@ -11,20 +11,12 @@
 
 <p align="center"> An intuitive sports team name / details resolver using fuzzy search. </p>
 
-## 🚨 Breaking Changes in v1.2 🚨
-We've made some significant improvements in version 1.2! Here's what you need to know:
-
-### Changed Default Import
-The default export has been changed from 'teamResolver' to 'resolveTeam'
-- **Old**: `import teamResolver from 'resolve-team'`
-  
-- **New**: `import resolveTeam from 'resolve-team'`
 
 
 ## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [🚨 Breaking Changes in v1.2 🚨](#-breaking-changes-in-v12-)
   - [Changed Default Import](#changed-default-import)
-- [Table of Contents](#table-of-contents)
 - [About Resolve Team](#about-resolve-team)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
@@ -40,6 +32,14 @@ The default export has been changed from 'teamResolver' to 'resolveTeam'
 - [License](#license)
 - [Back To The Top](#back-to-the-top)
 
+## 🚨 Breaking Changes in v1.2 🚨
+We've made some significant improvements in version 1.2! Here's what you need to know:
+
+### Changed Default Import
+The default export has been changed from 'teamResolver' to 'resolveTeam'
+- **Old**: `import teamResolver from 'resolve-team'`
+  
+- **New**: `import resolveTeam from 'resolve-team'`
 
 ## About Resolve Team
 Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
