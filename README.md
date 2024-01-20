@@ -16,7 +16,7 @@
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [🚨 Breaking Changes in v1.4 🚨](#-breaking-changes-in-v14-)
-  - [Changed Default Import](#changed-default-import)
+  - [Changed Import](#changed-import)
   - [API Param Change](#api-param-change)
   - [Search All Sports](#search-all-sports)
 - [About Resolve Team](#about-resolve-team)
@@ -37,11 +37,11 @@
 ## 🚨 Breaking Changes in v1.4 🚨
 We've made some significant improvements in version 1.4! Here's what you need to know:
 
-### Changed Default Import
-The default export has been changed from 'teamResolver' to 'resolveTeam'
+### Changed Import
+The exported module has been changed from 'teamResolver' to 'resolveTeam' - additionally, it is now a named export.
 - **Old**: `import teamResolver from 'resolve-team'`
   
-- **New**: `import resolveTeam from 'resolve-team'`
+- **New**: `import { resolveTeam } from 'resolve-team'`
 
 ### API Param Change
 The API has updated the order of parameters.
@@ -51,7 +51,7 @@ The API has updated the order of parameters.
 - **New**: `resolveTeam(team, options)`
 
 ### Search All Sports
-`sport` parameter has moved into `options` and **by default, it is set to search `all` sports if one is not provided.**
+The `sport` parameter has moved into `options` and **by default, it is set to search `all` sports if one is not provided.**
 
 ## About Resolve Team
 Resolve Team is a sports team name resolver that efficiently translates team abbreviations or partial names into complete team information. Using the power of Fuse.js for fuzzy search, it's perfect for quickly identifying sports teams across the NBA and NFL.
@@ -100,7 +100,7 @@ Customize your search with the following options:
 ### Examples
 
 ```js
-import teamResolver from 'resolve-team';
+import { teamResolver } from 'resolve-team';
 
 // Basic name resolution
 const nbaTeam = teamResolver(`Bos`); // 'Boston Celtics'
@@ -135,7 +135,7 @@ TypeScript - JavaScript with syntax for types
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 ## Authors
-- [@fearandesire](https://github.com/fearandesire) - Initial work
+- [@fearandesire](https://github.com/fearandesire) - Creator
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
