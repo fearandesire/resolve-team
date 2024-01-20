@@ -9,10 +9,9 @@
   ],
   "extends": "@tsconfig/node19/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": true,
+    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "skipLibCheck": true,
