@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import teamList from './teamlist.js';
+import teamList from './teamlist';
 
 type Team = {
     name: string;
@@ -12,13 +12,20 @@ type TeamList = {
     nfl: Team[];
 };
 
+const defaultOptions: Options = {
+    sport: 'all',
+    threshold: 0.4,
+    full: false,
+};
+
 type Options = {
-    sport?: string | 'all';
+    sport?: string
     threshold?: number;
     full?: boolean;
 };
 
-function validateInputs(team: string, sport: string | 'all' = 'all'): string | null {
+
+function validateInputs(team: string, sport: string = 'all'): string | null {
     if (!(sport in teamList) && sport !== 'all') {
         return 'Invalid sport category. Please choose from ' + Object.keys(teamList).join(', ') + '.';
     }
@@ -28,31 +35,33 @@ function validateInputs(team: string, sport: string | 'all' = 'all'): string | n
     return null;
 }
 
-function initializeFuse(options: Options): Fuse<Team> {
-    const { sport } = options;
-    const combinedTeams =  sport === 'all'
-        ? Object.values(teamList).flat()
-        : teamList[sport as keyof TeamList];
 
+function initializeFuse(options: Options): Fuse<Team> {
+    const { sport } = options
+
+    const allSportsTeams = Object.values(teamList).flat()
+    const combinedTeams =  sport === 'all'
+        ? allSportsTeams
+        : teamList[sport as keyof TeamList];
     const searchOptions = {
         isCaseSensitive: false,
         shouldSort: true,
-        threshold: options.threshold,
-        location: 0,
-        distance: 100,
-        maxPatternLength: 32,
         minMatchCharLength: 1,
         keys: ['name', 'nicknames', 'abbrev'],
     };
-
     return new Fuse(combinedTeams, searchOptions);
 }
 
 
-export default function resolveTeam(query: string, options: Options = { sport: 'all', threshold: 0.4, full: false }): string | object | null {
-    const errorMessage = validateInputs(query, options?.sport);
+export default function resolveTeam(query: string, options: Options = defaultOptions): string | object | null {
+    const finalOptions = { ...defaultOptions, ...options };
+    const errorMessage = validateInputs(query, finalOptions.sport);
     if (errorMessage) {
-     return null
+        return null;
+    }
+
+    if (!options?.sport) {
+        options.sport = 'all'
     }
     const fuse = initializeFuse(options);
     const result = fuse.search(query);
