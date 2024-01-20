@@ -1,4 +1,4 @@
-import resolveTeam from '../resolveTeam'; // Adjust the import path as needed
+import resolveTeam from '../index'; // Adjust the import path as needed
 
 // Mock teamList for testing
 // Assuming teamList has a similar structure to this
