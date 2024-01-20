@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js';
-import teamList from './teamlist';
+import teamList from './teamlist.js';
 import { TeamList, Team, Options, defaultOptions } from './interfaces';
 
 
