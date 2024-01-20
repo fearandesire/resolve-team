@@ -6,18 +6,14 @@
     "/.dist",
     "node_modules"
   ],
+  "extends": "@tsconfig/node19/tsconfig.json",
   "compilerOptions": {
     "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     "declaration": true, /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "declarationMap": true, /* Create sourcemaps for d.ts files. */
-    "emitDeclarationOnly": false, /* Only output d.ts files and not JavaScript files. */
     "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
-    "module": "ES2020",
-    "moduleResolution": "Node",
     "outDir": "./dist", /* Specify an output folder for all emitted files. */
     "skipLibCheck": true, /* Skip type checking all .d.ts files. */
-    "strict": true, /* Enable all strict type-checking options. */
-    "target": "es2020",
   }
 }

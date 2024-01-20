@@ -28,6 +28,8 @@
 		"@babel/core": "^7.22.11",
 		"@babel/preset-env": "^7.22.10",
 		"@babel/preset-typescript": "^7.22.11",
+		"@tsconfig/node19": "^19.1.2",
+		"@tsconfig/recommended": "^1.0.3",
 		"@types/jest": "^29.5.11",
 		"@types/node": "^20.11.5",
 		"babel-jest": "^29.6.4",

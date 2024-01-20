@@ -1,28 +1,7 @@
 import Fuse from 'fuse.js';
 import teamList from './teamlist';
+import { TeamList, Team, Options, defaultOptions } from './interfaces';
 
-type Team = {
-    name: string;
-    colors: string[];
-    nicknames: string[];
-};
-
-type TeamList = {
-    nba: Team[];
-    nfl: Team[];
-};
-
-const defaultOptions: Options = {
-    sport: 'all',
-    threshold: 0.4,
-    full: false,
-};
-
-type Options = {
-    sport?: string
-    threshold?: number;
-    full?: boolean;
-};
 
 
 function validateInputs(team: string, sport: string = 'all'): string | null {
@@ -51,7 +30,6 @@ function initializeFuse(options: Options): Fuse<Team> {
     };
     return new Fuse(combinedTeams, searchOptions);
 }
-
 
 export default function resolveTeam(query: string, options: Options = defaultOptions): string | object | null {
     const finalOptions = { ...defaultOptions, ...options };
