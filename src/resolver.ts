@@ -1,11 +1,11 @@
 import Fuse from 'fuse.js';
 import teamList from './teamlist.js';
-import { TeamList, Team, Options, defaultOptions } from './interfaces';
+import { TeamList, Team, Options, defaultOptions } from './interfaces.js';
 
 
 
 function validateInputs(team: string, sport: string = 'all'): string | null {
-    if (!(sport in teamList) && sport !== 'all') {
+    if (!(sport in teamList) && sport !== "all") {
         return 'Invalid sport category. Please choose from ' + Object.keys(teamList).join(', ') + '.';
     }
     if (typeof team !== 'string' || team.trim().length === 0) {
@@ -18,9 +18,9 @@ function validateInputs(team: string, sport: string = 'all'): string | null {
 function initializeFuse(options: Options): Fuse<Team> {
     const { sport } = options
 
-    const allSportsTeams = Object.values(teamList).flat()
+    const allTeams = Object.values(teamList).flat()
     const combinedTeams =  sport === 'all'
-        ? allSportsTeams
+        ? allTeams
         : teamList[sport as keyof TeamList];
     const searchOptions = {
         isCaseSensitive: false,
@@ -31,7 +31,7 @@ function initializeFuse(options: Options): Fuse<Team> {
     return new Fuse(combinedTeams, searchOptions);
 }
 
-export default function resolveTeam(query: string, options: Options = defaultOptions): string | object | null {
+export function resolveTeam(query: string, options: Options = defaultOptions): string | object | null {
     const finalOptions = { ...defaultOptions, ...options };
     const errorMessage = validateInputs(query, finalOptions.sport);
     if (errorMessage) {
