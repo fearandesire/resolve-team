@@ -1,11 +1,10 @@
 {
 	"name": "resolve-team",
-	"version": "1.4.1",
+	"version": "1.4.2",
 	"description": "Resolve NBA & NFL sports team names and information via fuzzy search",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"exports": "./dist/index.js",
+	"module": "./dist/index.js",
 	"scripts": {
 		"build": "tsc",
 		"test": "jest"
