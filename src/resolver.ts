@@ -17,11 +17,11 @@ function validateInputs(team: string, sport: string = 'all'): string | null {
 
 function initializeFuse(options: Options): Fuse<Team> {
     const { sport } = options
-
+    const sportLCase = sport?.toLowerCase();
     const allTeams = Object.values(teamList).flat()
-    const combinedTeams =  sport === 'all'
+    const combinedTeams =  sportLCase === 'all'
         ? allTeams
-        : teamList[sport as keyof TeamList];
+        : teamList[sportLCase as keyof TeamList];
     const searchOptions = {
         isCaseSensitive: false,
         shouldSort: true,
@@ -33,7 +33,7 @@ function initializeFuse(options: Options): Fuse<Team> {
 
 export function resolveTeam(query: string, options: Options = defaultOptions): string | object | null {
     const finalOptions = { ...defaultOptions, ...options };
-    const errorMessage = validateInputs(query, finalOptions.sport);
+    const errorMessage = validateInputs(query, finalOptions.sport?.toLowerCase());
     if (errorMessage) {
         return null;
     }
