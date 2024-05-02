@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+![NPM Downloads](https://img.shields.io/npm/d18m/resolve-team)
 [![npm version](https://img.shields.io/npm/v/resolve-team.svg?style=flat)](https://www.npmjs.com/package/resolve-team)
 
 </div>
@@ -31,7 +31,6 @@
 ## Features
 - **Fuzzy Search**: Resolve sports teams via misspelled, partial, or full names using Fuse.js.
 - **Team Details**: Get detailed information about the resolved team, including name, nicknames, abbreviations, and colors.
-- **Type-Checked**: Ensures reliability and stability within your projects.
 - **Customizable**: Offers options to customize the search sensitivity and limit searches to specific sports.
 
 ## Getting Started
@@ -39,16 +38,19 @@
 ### Installation
 To integrate Resolve Team into your project, you can install it via npm:
 
+_Via `npm`_
 ```bash
 npm install resolve-team
+```
+_Via `yarn`_
+```bash
+yarn add resolve-team
 ```
 
 ## Usage
 After installation, you can use the library to resolve sports team names by importing the `resolveTeam` function.
 
-### API Reference
-
-#### Parameters
+### Parameters
 
 The `resolveTeam` function accepts the following parameters:
 
@@ -74,7 +76,7 @@ Basic usage and examples of the `resolveTeam` function:
 ```js
 import { resolveTeam } from 'resolve-team';
 
-// Basic name resolution
+// Standard usage, will resolve the team name directly.
 const nbaTeam = resolveTeam(`Bos`); // 'Boston Celtics'
 
 // Fuzzy search example
