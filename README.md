@@ -24,7 +24,6 @@
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
-- [Changelog](#changelog)
 
 ## Introduction
 **Resolve Team** is a lightweight, easy-to-use library that effortlessly identifies sports teams based on partial input, misspelled, or full names, making basic team data available instantly. Utilizing Fuse.js, it provides a powerful fuzzy search functionality for resolving sports team names, the best and only library to do this.
@@ -97,8 +96,5 @@ Contributions are welcome and greatly appreciated. See [CONTRIBUTING.md](/CONTRI
 
 ## License
 This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
-
-## Changelog
-For notable changes and version updates, refer to the [CHANGELOG.md](/CHANGELOG.md).
 
 [Back To The Top](#table-of-contents)

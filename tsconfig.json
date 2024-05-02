@@ -1,10 +1,11 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/test/*.ts"
   ],
   "exclude": [
     "/.dist",
-    "src/test/*.ts",
+
     "node_modules"
   ],
   "extends": "@tsconfig/node19/tsconfig.json",

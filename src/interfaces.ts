@@ -1,24 +1,25 @@
 interface Team {
-    name: string;
-    colors: string[];
-    nicknames: string[];
-};
+	name: string
+	colors: string[]
+	nicknames: string[]
+	abbrev: string[]
+}
 
 interface TeamList {
-    nba: Team[];
-    nfl: Team[];
-};
+	nba: Team[]
+	nfl: Team[]
+}
 
 const defaultOptions: Options = {
-    sport: 'all',
-    threshold: 0.4,
-    full: false,
-};
+	sport: 'all',
+	threshold: 0.4,
+	full: false,
+}
 
 interface Options {
-    sport?: string
-    threshold?: number;
-    full?: boolean;
-};
+	sport?: string
+	threshold?: number
+	full?: boolean
+}
 
 export { Team, TeamList, defaultOptions, Options }
