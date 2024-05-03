@@ -11,31 +11,23 @@
 
 ---
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-- [API Reference](#api-reference)
-  - [Parameters](#parameters)
-  - [Options](#options)
-  - [Examples](#examples)
+## Contents
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [`Team` API Reference](#team-api-reference)
+- [Examples](#examples)
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
 
-## Introduction
+## Overview
 **Resolve Team** is a lightweight, easy-to-use library that effortlessly identifies sports teams based on partial input, misspelled, or full names, making basic team data available instantly. Utilizing Fuse.js, it provides a powerful fuzzy search functionality for resolving sports team names, the best and only library to do this.
 
-## Features
-- **Fuzzy Search**: Resolve sports teams via misspelled, partial, or full names using Fuse.js.
-- **Team Details**: Get detailed information about the resolved team, including name, nicknames, abbreviations, and colors.
-- **Customizable**: Offers options to customize the search sensitivity and limit searches to specific sports.
+---
 
-## Getting Started
 
-### Installation
+## Installation
 To integrate Resolve Team into your project, you can install it via npm:
 
 _Via `npm`_
@@ -46,20 +38,18 @@ _Via `yarn`_
 ```bash
 yarn add resolve-team
 ```
-
+---
 ## Usage
 After installation, you can use the library to resolve sports team names by importing the `resolveTeam` function.
 
 ### Parameters
 
-The `resolveTeam` function accepts the following parameters:
+| Parameter | Type   | Description                                        |
+|-----------|--------|----------------------------------------------------|
+| team      | string | The team name or abbreviation to search.           |
+| options   | object | (Optional) Configures the search and returned data |
 
-| Parameter | Type   | Description                           |
-|-----------|--------|---------------------------------------|
-| team      | string | The team name or abbreviation to search. |
-| options   | object | (Optional) Customization options.     |
-
-#### Options
+#### _Options_
 
 Customization options available:
 
@@ -68,30 +58,49 @@ Customization options available:
 | sport     | string  | 'all'   | Specific sport category (e.g., 'nba', 'nfl').         |
 | threshold | number  | 0.4     | Search sensitivity (0-1). Lower values are stricter.  |
 | full      | boolean | false   | If true, returns the complete team object.            |
+## `Team` API Reference
+[Team](src/interfaces.ts) Interface - This is provided when you use the `full` option from the library. 
 
-#### Examples
+```ts
+interface Team {
+  name: string
+  colors: string[]
+  nicknames: string[]
+  abbrev: string[]
+}
+```
+
+## Examples
 
 Basic usage and examples of the `resolveTeam` function:
 
-```js
-import { resolveTeam } from 'resolve-team';
+```ts
+import { resolveTeam } from 'resolve-team'
 
-// Standard usage, will resolve the team name directly.
-const nbaTeam = resolveTeam(`Bos`); // 'Boston Celtics'
+// Standard usage, resolves the team name directly.
+const nbaTeam = resolveTeam(`Bos`) // 'Boston Celtics'
 
 // Fuzzy search example
-const nflTeam = resolveTeam('gia'); // 'New York Giants'
+const nflTeam = resolveTeam('gia') // 'New York Giants'
 
 // Retrieving the full team object
-const fullTeam = resolveTeam('celtics', { full: true });
-// Resolves to full team details
+const fullTeam = resolveTeam('celtics', { full: true })
+/**
+ * Resolves with the complete team object:
+	{
+	    name: 'Boston Celtics',
+	    colors: ['#007A33', '#BA9653', '#000000'],
+	    nicknames: ['celtics', 'boston', 'bos', 'celt'],
+	    abbrev: ['BOS'],
+	}
+ */
 
 // Limit search to a specific sport
-const nbaTeam2 = resolveTeam('nyk', { sport: 'nba' }); // 'New York Knicks'
+const nbaTeam2 = resolveTeam('nyk', { sport: 'nba' }) // 'New York Knicks'
 ```
 
 ## Contributing
-Contributions are welcome and greatly appreciated. See [CONTRIBUTING.md](/CONTRIBUTING.md) for guidelines on how to contribute.
+Contributions are welcome and greatly appreciated! Please make a PR or open an issue. I'd love to expand the library to include more sports, teams, nicknmaes, etc.
 
 ## Authors
 - [@fearandesire](https://github.com/fearandesire) - Initial Creator
