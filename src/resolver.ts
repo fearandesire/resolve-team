@@ -69,10 +69,7 @@ export function resolveTeam(query: string, options?: Options): string | null
 
 /**
  * @module resolveTeam
- * Resolves a team based on the query and options provided.
- *
- * This function searches for a team based on a query string and options provided.
- * It returns either the full team object or the team name, depending on the options provided.
+ * Resolves a sports team name, or the {@link Team} data based on the query and options provided.
  *
  * **Example Usage:**
  *
