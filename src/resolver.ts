@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js'
-import { defaultOptions, Options, Team, TeamList } from './interfaces.ts'
-import teamList from './teamlist.ts'
+import { defaultOptions, Options, Team, TeamList } from './interfaces'
+import teamList from './teamlist'
 
 /**
  * Validates the inputs for team and sport.
