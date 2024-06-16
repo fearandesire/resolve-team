@@ -28,11 +28,10 @@
 		"team name resolver",
 		"sports teams"
 	],
-
 	"author": "fearandesire <fenix@fearandesire.com>",
 	"repository": {
-		"type" : "git",
-		"url" : "https://github.com/fearandesire/resolve-team"
+		"type": "git",
+		"url": "https://github.com/fearandesire/resolve-team"
 	},
 	"license": "MIT",
 	"publishConfig": {
