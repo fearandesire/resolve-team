@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v1.8.3
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.2...v1.8.3)
+
+### 🩹 Fixes
+
+- JSR Config to use NPM name ([633d854](https://github.com/fearandesire/resolve-team/commit/633d854))
+
+### 📖 Documentation
+
+- Further doc clarification ([0037552](https://github.com/fearandesire/resolve-team/commit/0037552))
+
+### 🏡 Chore
+
+- Bump version ([e16bc1f](https://github.com/fearandesire/resolve-team/commit/e16bc1f))
+- **jsr:** Config correction, remove action ([2c999ce](https://github.com/fearandesire/resolve-team/commit/2c999ce))
+- **jsr:** Re-instate scope ([69a2e36](https://github.com/fearandesire/resolve-team/commit/69a2e36))
+- **docs:** Improve JSDocs ([8ff36b0](https://github.com/fearandesire/resolve-team/commit/8ff36b0))
+- **jsr:** Update v ([9ccb2fe](https://github.com/fearandesire/resolve-team/commit/9ccb2fe))
+- **jsr:** Update version ([7c1ccd9](https://github.com/fearandesire/resolve-team/commit/7c1ccd9))
+
+### ❤️ Contributors
+
+- Fearandesire ([@fearandesire](http://github.com/fearandesire))
+
 ## v1.8.2
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.0...v1.8.2)
