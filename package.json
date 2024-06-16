@@ -13,7 +13,6 @@
 		"test": "jest",
 		"dev": "tsx ./src/index.ts",
 		"husky": "node ./node_modules/husky/lib/bin.js",
-		"prepare": "husky && husky install",
 		"release-it": "release-it"
 	},
 	"keywords": [
