@@ -17,6 +17,8 @@ interface Team {
 /**
  * Represents a list of teams categorized by sport.
  *
+ * This is the source library the {@linkcode resolveTeam API} will use to identify and resolve team data.
+ *
  * @interface
  */
 interface TeamList {
@@ -27,7 +29,7 @@ interface TeamList {
 }
 
 /**
- * The default options for the Fuse.js search.
+ * The default options the {@linkcode resolveTeam API} uses for the Fuse.js search.
  *
  * @constant
  * @type {Options}
@@ -39,7 +41,7 @@ const defaultOptions: Options = {
 }
 
 /**
- * Represents the options for the Fuse.js search.
+ * Represents the options for the {@linkcode resolveTeam API} to use with the Fuse.js search.
  *
  * @interface
  */
