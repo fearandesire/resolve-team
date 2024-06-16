@@ -13,7 +13,8 @@
 		"test": "jest",
 		"dev": "tsx ./src/index.ts",
 		"husky": "node ./node_modules/husky/lib/bin.js",
-		"prepare": "husky && husky install"
+		"prepare": "husky && husky install",
+		"release-it": "release-it"
 	},
 	"keywords": [
 		"nba",
@@ -47,6 +48,7 @@
 		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5",
 		"release-it": "^17.3.0",
+		"release-it-changelogen": "^0.1.0",
 		"ts-jest": "^29.1.1",
 		"tsx": "^4.7.0",
 		"typescript": "^5.4.5"
