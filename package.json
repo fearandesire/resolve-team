@@ -13,7 +13,7 @@
 		"test": "jest",
 		"dev": "tsx ./src/index.ts",
 		"husky": "node ./node_modules/husky/lib/bin.js",
-		"release-it": "release-it"
+		"release": "release-it"
 	},
 	"keywords": [
 		"nba",
