@@ -199,3 +199,4 @@ $RECYCLE.BIN/
 
 UPDATEGUIDE.md
 yarn.lock
+/.release-it.json
