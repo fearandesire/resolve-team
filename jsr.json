@@ -1,5 +1,5 @@
 {
-  "name": "resolve-team",
+  "name": "@fearandesire/resolve-team",
   "version": "1.8.2",
   "exports": "./src/index.ts"
 }
