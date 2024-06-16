@@ -7,6 +7,29 @@
 
 ### 🩹 Fixes
 
+- Tsconfig & imports ([79e9f03](https://github.com/fearandesire/resolve-team/commit/79e9f03))
+- Correct import ([422b012](https://github.com/fearandesire/resolve-team/commit/422b012))
+- **docs:** Rm space ([d8acdf4](https://github.com/fearandesire/resolve-team/commit/d8acdf4))
+
+### 💅 Refactors
+
+- Change to JSR config; Fix export ([5f81c30](https://github.com/fearandesire/resolve-team/commit/5f81c30))
+
+### 🏡 Chore
+
+- Add CHANGELOG ([1df6761](https://github.com/fearandesire/resolve-team/commit/1df6761))
+- **release:** V1.8.1 ([6c42e11](https://github.com/fearandesire/resolve-team/commit/6c42e11))
+
+### ❤️ Contributors
+
+- Fearandesire ([@fearandesire](http://github.com/fearandesire))
+
+## v1.8.1
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.0...v1.8.1)
+
+### 🩹 Fixes
+
 - Tsconfig & imports ([0143274](https://github.com/fearandesire/resolve-team/commit/0143274))
 - Correct import ([84c2c25](https://github.com/fearandesire/resolve-team/commit/84c2c25))
 - **docs:** Rm space ([5c4acfa](https://github.com/fearandesire/resolve-team/commit/5c4acfa))
