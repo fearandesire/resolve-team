@@ -1,20 +1,19 @@
 {
-  "include": [
-    "src/**/*",
-    "src/test/*.ts"
-  ],
-  "exclude": [
-    "/.dist",
-
-    "node_modules"
-  ],
-  "extends": "@tsconfig/node19/tsconfig.json",
   "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "skipLibCheck": true,
-  }
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
