@@ -45,26 +45,9 @@ function initializeFuse(options: Options): Fuse<Team> {
 }
 
 /**
- * Resolves a team based on the query and options provided.
+ * Resolves {@link Team} data based on the query and options provided.
  *
- * This function searches for a team based on a query string and options provided. It returns either the full team object or the team name, depending on the options.
- *
- * @example
- * // Resolve a team name with default options
- * const teamName = resolveTeam('Lakers')
- * console.log(teamName) // 'Los Angeles Lakers'
- *
- * @example
- * // Resolve full team details
- * const teamDetails = resolveTeam('Lakers', { full: true })
- * console.log(teamDetails)
- * // {
- * //   name: 'Los Angeles Lakers',
- * //   colors: ['#552583', '#FDB927', '#000000'],
- * //   nicknames: ['lakers', 'los angeles', 'lal'],
- * //   abbrev: ['LAL']
- * // }
- *
+ * @overload
  * @param {string} query - The query string to search for.
  * @param {Options & { full: true }} options - The options for the search, including a flag to return full team details.
  * @returns {Team|null} The matched team object or null if no match is found.
@@ -75,31 +58,9 @@ export function resolveTeam(
 ): Team | null
 
 /**
- * Resolves a team based on the query and {@linkcode Options} provided.
+ * Resolves a team name based on the query.
  *
- * When only the team name or abbreivation is provided, this API will return a matching team name.
- * If the `full` set to `true`, it will return a {@linkcode Team} object.
- *
- * @example
- * ```ts
- * const teamName = resolveTeam('Lakers')
- * console.log(teamName) // 'Los Angeles Lakers'
- *```
- * @example
- * ```ts
- * const teamDetails = resolveTeam('Lakers', { full: true })
- * console.log(teamDetails)
- * ```
- * Example of the {@linkcode Team} object
- * ```ts
- * {
- * name: 'Los Angeles Lakers',
- * colors: ['#552583', '#FDB927', '#000000'],
- * nicknames: ['lakers', 'los angeles', 'lal'],
- * abbrev: ['LAL']
- *  }
- * ```
- *
+ * @overload
  * @param {string} query - The query string to search for.
  * @param {Options} [options] - The options for the search.
  * @returns {string|null} The matched team name or null if no match is found.
@@ -107,19 +68,20 @@ export function resolveTeam(
 export function resolveTeam(query: string, options?: Options): string | null
 
 /**
+ * @module resolveTeam
  * Resolves a team based on the query and options provided.
  *
  * This function searches for a team based on a query string and options provided.
- * It returns either the full team object or the team name, depending on if optiosn are provided or not.
+ * It returns either the full team object or the team name, depending on the options provided.
  *
- * # Basic Example
- * @example
- * // Resolve a team name with default options
+ * **Example Usage:**
+ *
  * ```ts
+ * // Resolve a team name with default options
  * const teamName = resolveTeam('Lakers')
  * console.log(teamName) // 'Los Angeles Lakers'
- * ```
- * @example
+ *
+ * // Resolve a team object with full details
  * const teamDetails = resolveTeam('Lakers', { full: true })
  * console.log(teamDetails)
  * // {
@@ -128,10 +90,11 @@ export function resolveTeam(query: string, options?: Options): string | null
  * //   nicknames: ['lakers', 'los angeles', 'lal'],
  * //   abbrev: ['LAL']
  * // }
+ * ```
  *
  * @param {string} query - The query string to search for.
  * @param {Options} [options=defaultOptions] - The options for the search.
- * Defaults to defaultOptions.
+ * Defaults to {@link defaultOptions}.
  * @returns {string|Team|null} The matched team name or full team object based on the options, or null if no match is found.
  */
 export function resolveTeam(
