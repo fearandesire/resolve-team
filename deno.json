@@ -1,0 +1,5 @@
+{
+  "name": "@fearandesire/resolve-team",
+  "version": "1.7.3",
+  "exports": "./dist/index.js"
+}
