@@ -7,7 +7,7 @@
 
 </div>
 
-<p align="center"> Identify & retrieve sports team data instantly</p>
+<p align="center">Identify & retrieve sports team data instantly</p>
 
 ---
 
