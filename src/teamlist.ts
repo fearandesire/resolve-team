@@ -1,5 +1,11 @@
 import { TeamList } from './interfaces'
 
+/**
+ * A list of teams categorized by sport
+ *
+ * @constant
+ * @type {TeamList}
+ */
 const teamList: TeamList = {
 	nba: [
 		{
