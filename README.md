@@ -7,22 +7,51 @@
 
 </div>
 
-<p align="center"> An intuitive sports team name and details resolver using fuzzy search. </p>
+<p align="center"> Identify & retrieve sports team data instantly</p>
 
 ---
 
-## Contents
+## Examples
+
+Basic usage and examples of the `resolveTeam` function:
+
+```ts
+import { resolveTeam } from 'resolve-team'
+
+// Standard usage, resolves the team name directly.
+const nbaTeam = resolveTeam(`Bos`) // 'Boston Celtics'
+
+// Fuzzy search example
+const nflTeam = resolveTeam('gia') // 'New York Giants'
+
+// Retrieving the full team object
+const fullTeam = resolveTeam('celtics', { full: true })
+/**
+ * Resolves with the complete team object:
+	{
+	    name: 'Boston Celtics',
+	    colors: ['#007A33', '#BA9653', '#000000'],
+	    nicknames: ['celtics', 'boston', 'bos', 'celt'],
+	    abbrev: ['BOS'],
+	}
+ */
+
+// Limit search to a specific sport
+const nbaTeam2 = resolveTeam('nyk', { sport: 'nba' }) // 'New York Knicks'
+```
+
+## ToC
+- [Examples](#examples)
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
 - [`Team` API Reference](#team-api-reference)
-- [Examples](#examples)
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
 
 ## Overview
-**Resolve Team** is a lightweight, easy-to-use library that effortlessly identifies sports teams based on partial input, misspelled, or full names, making basic team data available instantly. Utilizing Fuse.js, it provides a powerful fuzzy search functionality for resolving sports team names, the best and only library to do this.
+**Resolve Team** is a lightweight, simple API that effortlessly identifies sports teams based on input. Partial or misspelled names or abbreviations are irrelevant. Utilizing Fuse.js, it provides a powerful fuzzy search functionality for resolving sports teams.
 
 ---
 
@@ -69,38 +98,11 @@ interface Team {
   abbrev: string[]
 }
 ```
-
-## Examples
-
-Basic usage and examples of the `resolveTeam` function:
-
-```ts
-import { resolveTeam } from 'resolve-team'
-
-// Standard usage, resolves the team name directly.
-const nbaTeam = resolveTeam(`Bos`) // 'Boston Celtics'
-
-// Fuzzy search example
-const nflTeam = resolveTeam('gia') // 'New York Giants'
-
-// Retrieving the full team object
-const fullTeam = resolveTeam('celtics', { full: true })
-/**
- * Resolves with the complete team object:
-	{
-	    name: 'Boston Celtics',
-	    colors: ['#007A33', '#BA9653', '#000000'],
-	    nicknames: ['celtics', 'boston', 'bos', 'celt'],
-	    abbrev: ['BOS'],
-	}
- */
-
-// Limit search to a specific sport
-const nbaTeam2 = resolveTeam('nyk', { sport: 'nba' }) // 'New York Knicks'
-```
-
 ## Contributing
-Contributions are welcome and greatly appreciated! Please make a PR or open an issue. I'd love to expand the library to include more sports, teams, nicknmaes, etc.
+Contributions are welcome and greatly appreciated! Please make a PR or open an issue. I'd love to expand the library to include:
+- More Sports and their teams
+- Fine-tune the fuzzy-search
+- Provide better filtering options
 
 ## Authors
 - [@fearandesire](https://github.com/fearandesire) - Initial Creator
@@ -108,4 +110,4 @@ Contributions are welcome and greatly appreciated! Please make a PR or open an i
 ## License
 This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
 
-[Back To The Top](#table-of-contents)
+[Back To The Top](#toc)
