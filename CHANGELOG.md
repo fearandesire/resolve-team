@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.4
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.3...v1.8.4)
+
+### 🩹 Fixes
+
+- Allow for ESM and CommonJS usage thanks to `pkgroll` ([62ee20b](https://github.com/fearandesire/resolve-team/commit/62ee20b))
+
+### ❤️ Contributors
+
+- Fearandesire ([@fearandesire](http://github.com/fearandesire))
+
 ## v1.8.3
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.2...v1.8.3)
