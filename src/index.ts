@@ -1,3 +1,3 @@
-import { resolveTeam } from './resolver'
+import { resolveTeam } from './resolver.js'
 
 export { resolveTeam }
