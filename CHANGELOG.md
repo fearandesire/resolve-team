@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.6
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.5...v1.8.6)
+
+### 💅 Refactors
+
+- Async tag ([a3c722e](https://github.com/fearandesire/resolve-team/commit/a3c722e))
+
+### ❤️ Contributors
+
+- Fearandesire ([@fearandesire](http://github.com/fearandesire))
+
 ## v1.8.5
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.4...v1.8.5)
