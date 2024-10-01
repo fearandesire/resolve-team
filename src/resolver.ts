@@ -46,26 +46,29 @@ function initializeFuse(options: Options): Fuse<Team> {
 
 /**
  * Resolves {@link Team} data based on the query and options provided.
- *
+ * When no options are provided, it will return the team name directly as a string.
  * @overload
  * @param {string} query - The query string to search for.
  * @param {Options & { full: true }} options - The options for the search, including a flag to return full team details.
  * @returns {Team|null} The matched team object or null if no match is found.
  */
-export function resolveTeam(
+export async function resolveTeam(
 	query: string,
 	options: Options & { full: true },
-): Team | null
+): Promise<Team | null>
 
 /**
  * Resolves a team name based on the query.
- *
+ * When no options are provided, it will return the team name directly as a string.
  * @overload
  * @param {string} query - The query string to search for.
  * @param {Options} [options] - The options for the search.
  * @returns {string|null} The matched team name or null if no match is found.
  */
-export function resolveTeam(query: string, options?: Options): string | null
+export async function resolveTeam(
+	query: string,
+	options?: Options,
+): Promise<string | null>
 
 /**
  * @module resolveTeam
@@ -94,10 +97,10 @@ export function resolveTeam(query: string, options?: Options): string | null
  * Defaults to {@link defaultOptions}.
  * @returns {string|Team|null} The matched team name or full team object based on the options, or null if no match is found.
  */
-export function resolveTeam(
+export async function resolveTeam(
 	query: string,
 	options: Options = defaultOptions,
-): string | Team | null {
+): Promise<string | Team | null> {
 	const finalOptions = { ...defaultOptions, ...options }
 	const errorMessage = validateInputs(
 		query,

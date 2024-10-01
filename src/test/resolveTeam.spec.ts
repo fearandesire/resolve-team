@@ -29,21 +29,21 @@ describe('Team data integrity', () => {
 	})
 })
 describe('resolveTeam functionality', () => {
-	test('resolves a NBA team name using abbreviation', () => {
-		expect(resolveTeam('BOS')).toBe('Boston Celtics')
+	test('resolves a NBA team name using abbreviation', async () => {
+		expect(await resolveTeam('BOS')).toBe('Boston Celtics')
 	})
 
-	test('resolves a NFL team name using partial name', () => {
-		expect(resolveTeam('bears')).toBe('Chicago Bears')
+	test('resolves a NFL team name using partial name', async () => {
+		expect(await resolveTeam('bears')).toBe('Chicago Bears')
 	})
 
-	test('returns full NBA team object when full option is true', () => {
+	test('returns full NBA team object when full option is true', async () => {
 		const expected = {
 			name: 'Charlotte Hornets',
 			colors: ['#1D1160', '#00788C', '#000000'],
 			nicknames: ['hornets', 'charlotte', 'cha'],
 			abbrev: ['CHA'],
 		}
-		expect(resolveTeam('horntd', { full: true })).toEqual(expected)
+		expect(await resolveTeam('horntd', { full: true })).toEqual(expected)
 	})
 })
