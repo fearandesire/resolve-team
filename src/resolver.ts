@@ -48,6 +48,7 @@ function initializeFuse(options: Options): Fuse<Team> {
  * Resolves {@link Team} data based on the query and options provided.
  * When no options are provided, it will return the team name directly as a string.
  * @overload
+ * @async
  * @param {string} query - The query string to search for.
  * @param {Options & { full: true }} options - The options for the search, including a flag to return full team details.
  * @returns {Team|null} The matched team object or null if no match is found.
@@ -61,6 +62,7 @@ export async function resolveTeam(
  * Resolves a team name based on the query.
  * When no options are provided, it will return the team name directly as a string.
  * @overload
+ * @async
  * @param {string} query - The query string to search for.
  * @param {Options} [options] - The options for the search.
  * @returns {string|null} The matched team name or null if no match is found.
@@ -92,6 +94,7 @@ export async function resolveTeam(
  * // }
  * ```
  *
+ * @async
  * @param {string} query - The query string to search for.
  * @param {Options} [options=defaultOptions] - The options for the search.
  * Defaults to {@link defaultOptions}.
