@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.8.5
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.4...v1.8.5)
+
+### 💅 Refactors
+
+- Use async; update jsdoc ([bc98a9a](https://github.com/fearandesire/resolve-team/commit/bc98a9a))
+- Use pnpm; upgrade deps ([3f1e080](https://github.com/fearandesire/resolve-team/commit/3f1e080))
+
+### 🏡 Chore
+
+- Use biomejs ([80cdc3b](https://github.com/fearandesire/resolve-team/commit/80cdc3b))
+
+### ❤️ Contributors
+
+- Fearandesire ([@fearandesire](http://github.com/fearandesire))
+
 ## v1.8.4
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.3...v1.8.4)

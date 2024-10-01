@@ -1,6 +1,6 @@
 {
 	"name": "resolve-team",
-	"version": "1.8.4",
+	"version": "1.8.5",
 	"description": "Resolve NBA & NFL sports team names and information via fuzzy search",
 	"type": "module",
 	"exports": {
@@ -12,7 +12,9 @@
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "pkgroll",
 		"test": "jest",
@@ -73,13 +75,19 @@
 		"typescript": "^5.6.2"
 	},
 	"jest": {
-		"moduleFileExtensions": ["js", "json", "ts"],
+		"moduleFileExtensions": [
+			"js",
+			"json",
+			"ts"
+		],
 		"rootDir": "src",
 		"testRegex": ".*\\.spec\\.ts$",
 		"transform": {
 			"^.+\\.(t|j)s$": "ts-jest"
 		},
-		"collectCoverageFrom": ["**/*.(t|j)s"],
+		"collectCoverageFrom": [
+			"**/*.(t|j)s"
+		],
 		"globals": {
 			"'ts-jest'": {
 				"useESM": true
