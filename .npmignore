@@ -1,0 +1,101 @@
+# Development files
+.git
+.gitignore
+.github
+.npmignore
+.editorconfig
+.eslintrc*
+.prettierrc*
+.vscode
+.idea
+*.log
+*.lock
+*.tgz
+.notebook
+.history
+.ionide
+
+# Source and test files
+src/
+test/
+tests/
+__tests__/
+coverage/
+.nyc_output/
+lib-cov/
+*.lcov
+
+# Build and dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+web_modules/
+build/
+tmp/
+temp/
+.next
+out/
+.nuxt
+.cache
+.parcel-cache
+.webpack/
+.svelte-kit/
+build/Release
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache directories
+.npm
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Documentation and examples
+docs/
+examples/
+*.md
+!README.md
+
+# Configuration files
+tsconfig.json
+jest.config.js
+babel.config.js
+webpack.config.js
+rollup.config.js
+.release-it.json
+
+# Environment files
+.env*
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Yarn specific
+.yarn/
+.pnp.*
+.yarn-integrity
+
+# Misc
+*.DS_Store
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Release files
+CHANGELOG.md
+.release-it.json

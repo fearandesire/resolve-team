@@ -46,7 +46,8 @@
 			"**/node_modules/",
 			"**/dist/",
 			"**/Dockerfile",
-			"**/docker-compose.yml"
+			"**/docker-compose.yml",
+			"package.json"
 		]
 	},
 	"javascript": {

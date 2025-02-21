@@ -1,0 +1,18 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm lint {staged_files}
+      stage_fixed: true
+
+    typecheck:
+      run: pnpm tsc --noEmit --pretty --diagnostics --extendedDiagnostics
+
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm test

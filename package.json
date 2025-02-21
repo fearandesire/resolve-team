@@ -5,6 +5,7 @@
 	"type": "module",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		}
@@ -16,11 +17,12 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "pkgroll",
-		"test": "jest",
+		"build": "tsc",
+		"rollup": "pkgroll",
+		"test": "vitest",
 		"dev": "tsx ./src/index.ts",
-		"husky": "node ./node_modules/husky/lib/bin.js",
-		"release": "release-it"
+		"release": "release-it",
+		"lint": "biome check --write --unsafe src"
 	},
 	"keywords": [
 		"nba",
@@ -46,58 +48,26 @@
 		"registry": "https://registry.npmjs.org"
 	},
 	"dependencies": {
-		"fuse.js": "^7.0.0"
+		"fuse.js": "^7.1.0",
+		"resolve-team": "file:resolve-team-2.0.0.tgz",
+		"vitest": "^3.0.6"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.25.2",
-		"@babel/preset-env": "^7.25.4",
-		"@babel/preset-typescript": "^7.24.7",
-		"@biomejs/biome": "1.9.3",
-		"@tsconfig/node19": "^19.1.4",
-		"@tsconfig/recommended": "^1.0.7",
-		"@types/jest": "^29.5.13",
-		"@types/node": "^20.16.10",
-		"@typescript-eslint/eslint-plugin": "6.19.0",
-		"@typescript-eslint/parser": "6.19.0",
-		"babel-jest": "^29.7.0",
-		"eslint": "8.22.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-prettier": "^5.2.1",
-		"husky": "^8.0.3",
-		"jest": "^29.7.0",
-		"lint-staged": "^15.2.10",
-		"pkgroll": "^2.5.0",
-		"prettier": "^3.3.3",
-		"release-it": "^17.6.0",
+		"@babel/core": "^7.26.9",
+		"@babel/preset-env": "^7.26.9",
+		"@babel/preset-typescript": "^7.26.0",
+		"@biomejs/biome": "1.9.4",
+		"@tsconfig/node19": "^19.1.5",
+		"@tsconfig/recommended": "^1.0.8",
+		"@tsconfig/strictest": "^2.0.5",
+		"@types/node": "^22.13.4",
+		"lefthook": "^1.10.10",
+		"lint-staged": "^15.4.3",
+		"pkgroll": "^2.10.0",
+		"release-it": "^18.1.2",
 		"release-it-changelogen": "^0.1.0",
-		"ts-jest": "^29.2.5",
-		"tsx": "^4.19.1",
-		"typescript": "^5.6.2"
-	},
-	"jest": {
-		"moduleFileExtensions": [
-			"js",
-			"json",
-			"ts"
-		],
-		"rootDir": "src",
-		"testRegex": ".*\\.spec\\.ts$",
-		"transform": {
-			"^.+\\.(t|j)s$": "ts-jest"
-		},
-		"collectCoverageFrom": [
-			"**/*.(t|j)s"
-		],
-		"globals": {
-			"'ts-jest'": {
-				"useESM": true
-			}
-		},
-		"moduleNameMapper": {
-			"^(\\..*)\\.js$": "$1"
-		},
-		"coverageDirectory": "../coverage",
-		"testEnvironment": "node"
+		"tsx": "^4.19.3",
+		"typescript": "^5.7.3"
 	},
 	"packageManager": "pnpm@9.1.0"
 }
