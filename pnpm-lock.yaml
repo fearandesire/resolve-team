@@ -11,12 +11,6 @@ importers:
       fuse.js:
         specifier: ^7.1.0
         version: 7.1.0
-      resolve-team:
-        specifier: file:resolve-team-2.0.0.tgz
-        version: file:resolve-team-2.0.0.tgz(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.7.0)
-      vitest:
-        specifier: ^3.0.6
-        version: 3.0.6(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.7.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.26.9
@@ -63,6 +57,9 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+      vitest:
+        specifier: ^3.0.6
+        version: 3.0.6(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.7.0)
 
 packages:
 
@@ -2502,10 +2499,6 @@ packages:
 
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
-
-  resolve-team@file:resolve-team-2.0.0.tgz:
-    resolution: {integrity: sha512-9QB7swaX/iMq57Ph5QEJKhA3VxiEiX3KrvLcpZSe6SYRpyW+mFETukksMvB2XWKc+OVJC+JdFzbwZV0XBSlUuQ==, tarball: file:resolve-team-2.0.0.tgz}
-    version: 2.0.0
 
   resolve@1.22.10:
     resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
@@ -5358,31 +5351,6 @@ snapshots:
   resolve-from@4.0.0: {}
 
   resolve-pkg-maps@1.0.0: {}
-
-  resolve-team@file:resolve-team-2.0.0.tgz(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.7.0):
-    dependencies:
-      fuse.js: 7.1.0
-      vitest: 3.0.6(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.7.0)
-    transitivePeerDependencies:
-      - '@edge-runtime/vm'
-      - '@types/debug'
-      - '@types/node'
-      - '@vitest/browser'
-      - '@vitest/ui'
-      - happy-dom
-      - jiti
-      - jsdom
-      - less
-      - lightningcss
-      - msw
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
 
   resolve@1.22.10:
     dependencies:

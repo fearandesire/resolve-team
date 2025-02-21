@@ -285,11 +285,11 @@ export class TeamResolver {
  * console.log(areSame) // true
  * 
  // Sport specific search
- * const nbaTeams = await teamResolver.resolve('minnesota', {
+ * const timberwolves = await teamResolver.resolve('minnesota', {
  *   sport: 'nba',
  *   threshold: 0.2
  * })
- * console.log(nbaTeams) // 'Minnesota Timberwolves'
+ * console.log(timberwolves) // 'Minnesota Timberwolves'
  * ```
  */
 export const teamResolver: TeamResolver = new TeamResolver()
