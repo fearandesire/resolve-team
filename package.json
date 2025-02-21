@@ -20,7 +20,8 @@
 		"test": "vitest",
 		"dev": "tsx ./src/index.ts",
 		"release": "release-it",
-		"lint": "biome check --write --unsafe src"
+		"lint": "biome check --write --unsafe src",
+		"compile": "tsc && pkgroll"
 	},
 	"keywords": [
 		"nba",
