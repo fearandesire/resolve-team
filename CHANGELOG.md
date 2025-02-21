@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.0.2-0
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v2.0.1...v2.0.2-0)
+
+### 🏡 Chore
+
+- Add compile script to package.json ([167cfd4](https://github.com/fearandesire/resolve-team/commit/167cfd4))
+
+### ❤️ Contributors
+
+- Fearandesire <fenixcoding@gmail.com>
+
 ## v2.0.0
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.6...v2.0.0)
