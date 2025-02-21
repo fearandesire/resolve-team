@@ -1,6 +1,6 @@
 {
 	"name": "resolve-team",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Resolve NBA & NFL sports team names and information via fuzzy search",
 	"type": "module",
 	"exports": {

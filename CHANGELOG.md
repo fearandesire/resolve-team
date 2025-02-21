@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v2.0.3
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v2.0.2-0...v2.0.3)
+
+### 💅 Refactors
+
+- Explicit type teamResolver singleton; jsr lib version; doc updates ([9ac207e](https://github.com/fearandesire/resolve-team/commit/9ac207e))
+
+### 📖 Documentation
+
+- Comprehensive README overhaul with enhanced documentation ([d0816af](https://github.com/fearandesire/resolve-team/commit/d0816af))
+
+### 🏡 Chore
+
+- Move vitest to devDependencies and remove local package reference ([fac4fac](https://github.com/fearandesire/resolve-team/commit/fac4fac))
+- Sync npm with git changes for deps ([f4d59a0](https://github.com/fearandesire/resolve-team/commit/f4d59a0))
+- Bump jsr package version to 2.0.3 ([dec480f](https://github.com/fearandesire/resolve-team/commit/dec480f))
+
+### 🤖 CI
+
+- **deps:** Bump pnpm/action-setup from 2 to 4 ([6eadaf0](https://github.com/fearandesire/resolve-team/commit/6eadaf0))
+
+### ❤️ Contributors
+
+- Fearandesire <fenixcoding@gmail.com>
+
 ## v2.0.2
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v2.0.2-0...v2.0.2)
