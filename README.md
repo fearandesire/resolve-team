@@ -1,169 +1,210 @@
-<h1 align="center">Resolve Team</h1>
+
+<h1 align="center">resolve-team</h1>
 
 <div align="center">
 
-![NPM Downloads](https://img.shields.io/npm/d18m/resolve-team)
+![NPM Downloads](https://img.shields.io/npm/dm/resolve-team)
 [![npm version](https://img.shields.io/npm/v/resolve-team.svg?style=flat)](https://www.npmjs.com/package/resolve-team)
+[![License](https://img.shields.io/npm/l/resolve-team)](https://github.com/fearandesire/resolve-team/blob/main/LICENSE)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/resolve-team)](https://bundlephobia.com/package/resolve-team)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/fearandesire/resolve-team/pulls)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)](https://www.typescriptlang.org/)
 
 </div>
 
-<p align="center">Identify & retrieve sports team data instantly</p>
+<p align="center"><strong>Instantly identify & resolve sports team names with fuzzy search & more</strong></p>
+
+<div align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-api-reference">API Reference</a> •
+  <a href="#-examples">Examples</a>
+</div>
 
 ---
 
 > [!WARNING]  
-> Breaking Change: The standalone `resolveTeam` function is now deprecated and will be removed in future versions. We recommend migrating to the new `TeamResolver` class for improved functionality and future updates.
+> **Breaking Change**: The standalone `resolveTeam` function is now deprecated and will be removed in future versions. Please migrate to use `teamResolver` for improved functionality and future updates.
 
+## ✨ Features
 
-## Examples 
+- **Fuzzy Search** - Resolves team names even with misspellings or partial matches
+- **Multi-Sport Support** - Currently supports NBA and NFL teams, with plans to expand to other sports leagues
+- **TypeScript Ready** - Full type definitions included
+- **Lightweight** - resolve-team currently has 1 dependency, [fuse.js](https://fusejs.io/)
+- **Team Comparison** - Compare if two queries resolve to the same team
+- **Full Team Data** - Access team colors, nicknames, abbreviations, and more
 
-```ts
-import { teamResolver } from 'resolve-team'
-
-// Standard usage - returns team name
-const nbaTeam = await teamResolver.resolve('Bos') // 'Boston Celtics'
-
-// Fuzzy search example
-const nflTeam = await teamResolver.resolve('gia') // 'New York Giants'
-
-// Retrieving the full team object (name, colors, nicknames, abbrev, sport)
-const fullTeam = await teamResolver.resolve('celtics', { full: true })
-/**
-  {
-      name: 'Boston Celtics',
-      colors: ['#007A33', '#BA9653', '#000000'],
-      nicknames: ['celtics', 'boston', 'bos', 'celt'],
-      abbrev: ['BOS'],
-      sport: 'nba'
-  }
- */
-
-// Compare if two queries resolve to the same team
-const areSame = await teamResolver.compare('lakers', 'lal') // true
-
-// Legacy usage (deprecated)
-import { resolveTeam } from 'resolve-team'
-const legacyResult = await resolveTeam('nyk', { sport: 'nba' }) // 'New York Knicks'
-```
-
-## ToC
-1. [Examples](#examples)
-2. [ToC](#toc)
-3. [Overview](#overview)
-4. [Installation](#installation)
-5. [Usage](#usage)
-   1. [Parameters](#parameters)
-      1. [Options](#options)
-   2. [Methods](#methods)
-      1. [`resolve()`](#resolve)
-      2. [`compare()`](#compare)
-6. [`Team` API Reference](#team-api-reference)
-7. [Purpose](#purpose)
-8. [Notes](#notes)
-9. [Contributing](#contributing)
-10. [Authors](#authors)
-11. [License](#license)
-
-## Overview
-**Resolve Team** is a lightweight, simple API that effortlessly identifies sports teams based on input. Partial or misspelled names or abbreviations are irrelevant. Utilizing Fuse.js, it provides a powerful fuzzy search functionality for resolving sports teams.
-
-## Installation
-To integrate Resolve Team into your project, you can install it via your favorite package manager.
+## 📦 Installation
 
 ```bash
-npm i resolve-team
+# Using npm
+npm install resolve-team
 
-yarn i resolve-team
+# Using yarn
+yarn add resolve-team
 
-pnpm i resolve-team
+# Using pnpm
+pnpm add resolve-team
 
-bun i resolve-team
+# Using bun
+bun add resolve-team
 ```
 
----
-## Usage
-After installation, you can use the library by importing the `teamResolver`.
+## 🚀 Quick Start
 
-### Parameters
+```typescript
+import { teamResolver } from 'resolve-team';
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| query     | string | The team name or abbreviation to search. |
-| options   | object | Configures the search and returned data  |
+// Resolve a team name with fuzzy matching
+const team = await teamResolver.resolve('lakers');
+console.log(team); // 'Los Angeles Lakers'
+
+// Get full team details
+const fullTeam = await teamResolver.resolve('celtics', { full: true });
+console.log(fullTeam);
+/*
+{
+  name: 'Boston Celtics',
+  colors: ['#007A33', '#BA9653', '#000000'],
+  nicknames: ['celtics', 'boston', 'bos', 'celt'],
+  abbrev: ['BOS'],
+  sport: 'nba'
+}
+*/
+
+// Compare if two queries refer to the same team
+const isSameTeam = await teamResolver.compare('nyg', 'giants');
+console.log(isSameTeam); // true
+```
+
+## 🧰 API Reference
+
+### `teamResolver.resolve(query, options?)`
+
+Resolves a team based on the provided query string.
+
+#### Parameters
+
+| Parameter | Type     | Description                             | Required |
+| --------- | -------- | --------------------------------------- | -------- |
+| query     | `string` | Team name, nickname, or abbreviation    | Yes      |
+| options   | `object` | Configuration options (see table below) | No       |
 
 #### Options
 
-Customization options available:
+| Option    | Type      | Default | Description                                          |
+| --------- | --------- | ------- | ---------------------------------------------------- |
+| sport     | `string`  | `'all'` | Limit search to a specific sport (`'nba'`, `'nfl'`)  |
+| threshold | `number`  | `0.4`   | Search sensitivity (0-1). Lower = stricter matching  |
+| full      | `boolean` | `false` | Return complete team object instead of just the name |
 
-| Property  | Type    | Default   | Options             | Description                                             |
-| --------- | ------- | --------- | ------------------- | ------------------------------------------------------- |
-| sport     | string  | **'all'** | 'all', 'nba', 'nfl' | Filter search to a specific sport (e.g., 'nba', 'nfl'). |
-| threshold | number  | 0.4       | 0-1                 | Search sensitivity (0-1). Lower values are stricter.    |
-| full      | boolean | false     | true                | If true, returns the complete team object.              |
+#### Returns
 
-### Methods
+- If `options.full` is `false`: `Promise<string>` - Team name
+- If `options.full` is `true`: `Promise<Team>` - Complete team object
 
-#### `resolve()`
-```ts
-// Basic resolution
-const team = await teamResolver.resolve('lakers')
+### `teamResolver.compare(query1, query2, options?)`
 
-// Full team data
-const fullTeam = await teamResolver.resolve('lakers', { full: true })
+Compares if two queries resolve to the same team.
 
-// With options
-const result = await teamResolver.resolve('ny', {
-  sport: 'nfl',
-  threshold: 0.3
-})
+#### Parameters
+
+| Parameter | Type     | Description                        | Required |
+| --------- | -------- | ---------------------------------- | -------- |
+| query1    | `string` | First team query                   | Yes      |
+| query2    | `string` | Second team query                  | Yes      |
+| options   | `object` | Same options as `resolve()` method | No       |
+
+#### Returns
+
+`Promise<boolean>` - `true` if queries resolve to the same team
+
+### Sports League Information Data
+
+```typescript
+// Get all NBA teams
+const nbaTeams = await teamResolver.getNbaTeams(); // ['Atlanta Hawks', 'Boston Celtics', ....]
+
+// Get all NFL teams
+const nflTeams = await teamResolver.getNflTeams(); // ['Arizona Cardinals', 'Atlanta Falcons', ....]
 ```
 
-#### `compare()`
-```ts
-// Compare two team queries
-const areSame = await teamResolver.compare('lakers', 'lal')
-console.log(areSame) // true
+### Team Interface
 
-// With custom options
-const strictCompare = await teamResolver.compare('giants', 'nyg', {
-  threshold: 0.3
-})
-```
-
-## `Team` API Reference
-[Team](src/types/team.ts) Interface - This is the expected response when you enable the `full` option from the library. 
-
-```ts
+```typescript
 interface Team {
-  name: string
-  colors: string[]
-  nicknames: string[]
-  abbrev: string[]
-  sport: string
+  name: string;       // Full team name
+  colors: string[];   // Team colors as hex codes
+  nicknames: string[]; // Common nicknames and variations
+  abbrev: string[];   // Official abbreviations
+  sport: string;      // Sport identifier ('nba' or 'nfl')
 }
 ```
 
-## Purpose
+## 📚 Examples
 
-This library was designed as I work on several sports related projects and was often in need of a simple way to identify sports teams based on abbreviations and the like.
-At it's core - this library will remain as lightweight as possible while focusing on it's core ability to identify sports teams. Future updates will focus on more complex features, while aiming to keep the library's core principles.
+### Basic Usage
 
-## Notes
+```typescript
+import { teamResolver } from 'resolve-team';
 
-While this library allows specifying a sport in the options, this acts as a search preference rather than a strict filter. The fuzzy search algorithm will still return the best matching team across all sports if a closer match exists. This design choice maintains the library's core strength of always finding the most relevant team match.
+// Works with partial names
+const team1 = await teamResolver.resolve('Bos');  // 'Boston Celtics'
 
-## Contributing
-Contributions are welcome and greatly appreciated! Please make a PR or open an issue. I'd love to expand the library to include:
-- More Sports and their teams
-- Fine-tune the fuzzy-search
-- Provide better filtering options
-- Add strict sport validation options
-  - i.e. ability to specify a sport and when a match is for another sport, it returns null/false
+// Works with misspellings
+const team2 = await teamResolver.resolve('cetis');  // 'Boston Celtics'
 
-## Authors
-- [@fearandesire](https://github.com/fearandesire) - Initial Creator
+// Works with abbreviations
+const team3 = await teamResolver.resolve('gia');  // 'New York Giants'
+```
 
-## License
-This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
+### Sport-Specific Resolution
 
-[Back To The Top](#toc)
+```typescript
+// Limit search to NFL teams
+const nflTeam = await teamResolver.resolve('giants', { 
+  sport: 'nfl',
+  threshold: 0.3
+});
+console.log(nflTeam);  // 'New York Giants'
+```
+
+### Advanced Comparison
+
+```typescript
+// Check if teams are the same with custom threshold
+const sameTeam = await teamResolver.compare('nyknicks', 'new york', {
+  threshold: 0.2,
+  sport: 'nba'
+});
+console.log(sameTeam);  // true
+```
+
+## 🛠️ Contributing
+
+Contributions are welcome and greatly appreciated! Here are some ways you can contribute:
+
+- Add support for additional sports leagues
+- Fine-tune the fuzzy search algorithm
+- Improve filtering options
+- Add strict sport validation
+
+Please check out our [contribution guidelines](CONTRIBUTING.md) before submitting PRs.
+
+## 🔮 Roadmap
+
+- [ ] Add MLB (Major League Baseball) teams
+- [ ] Add NHL (National Hockey League) teams
+- [ ] Add Premier League teams
+- [ ] Strict sport validation option
+- [ ] Team logo URL support
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- [@fearandesire](https://github.com/fearandesire) - Creator & Maintainer
