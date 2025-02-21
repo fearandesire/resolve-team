@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.0.0
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.6...v2.0.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Introduce TeamResolver class and deprecate standalone resolveTeam ([224acc1](https://github.com/fearandesire/resolve-team/commit/224acc1))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Introduce TeamResolver class and deprecate standalone resolveTeam ([224acc1](https://github.com/fearandesire/resolve-team/commit/224acc1))
+
+### ❤️ Contributors
+
+- Fearandesire <fenixcoding@gmail.com>
+
 ## v1.8.6
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v1.8.5...v1.8.6)

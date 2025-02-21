@@ -1,6 +1,6 @@
 {
 	"name": "resolve-team",
-	"version": "1.8.6",
+	"version": "2.0.0",
 	"description": "Resolve NBA & NFL sports team names and information via fuzzy search",
 	"type": "module",
 	"exports": {
@@ -13,9 +13,7 @@
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "tsc",
 		"rollup": "pkgroll",
@@ -49,7 +47,6 @@
 	},
 	"dependencies": {
 		"fuse.js": "^7.1.0",
-		"resolve-team": "file:resolve-team-2.0.0.tgz",
 		"vitest": "^3.0.6"
 	},
 	"devDependencies": {
