@@ -11,7 +11,9 @@
 
 ---
 
-> [!WARNING] Breaking Change: The standalone `resolveTeam` function is now deprecated and will be removed in future versions. We recommend migrating to the new `TeamResolver` class for improved functionality and future updates.
+> [!WARNING]  
+> Breaking Change: The standalone `resolveTeam` function is now deprecated and will be removed in future versions. We recommend migrating to the new `TeamResolver` class for improved functionality and future updates.
+
 
 ## Examples 
 
