@@ -53,7 +53,7 @@ const legacyResult = await resolveTeam('nyk', { sport: 'nba' }) // 'New York Kni
 4. [Installation](#installation)
 5. [Usage](#usage)
    1. [Parameters](#parameters)
-      1. [_Options_](#options)
+      1. [Options](#options)
    2. [Methods](#methods)
       1. [`resolve()`](#resolve)
       2. [`compare()`](#compare)
@@ -91,7 +91,7 @@ After installation, you can use the library by importing the `teamResolver`.
 | query     | string | The team name or abbreviation to search. |
 | options   | object | Configures the search and returned data  |
 
-#### _Options_
+#### Options
 
 Customization options available:
 
@@ -131,7 +131,7 @@ const strictCompare = await teamResolver.compare('giants', 'nyg', {
 ```
 
 ## `Team` API Reference
-[Team](src/interfaces.ts) Interface - This is the expected response when you enable the `full` option from the library. 
+[Team](src/types/team.ts) Interface - This is the expected response when you enable the `full` option from the library. 
 
 ```ts
 interface Team {

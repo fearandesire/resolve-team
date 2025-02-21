@@ -292,7 +292,7 @@ export class TeamResolver {
  * console.log(nbaTeams) // 'Minnesota Timberwolves'
  * ```
  */
-export const teamResolver = new TeamResolver()
+export const teamResolver: TeamResolver = new TeamResolver()
 // ! For backward compatibility, we still export the old functions; simply using the new class
 
 /**
