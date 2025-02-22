@@ -1,15 +1,15 @@
 {
 	"extends": ["@tsconfig/strictest/tsconfig"],
 	"compilerOptions": {
-		"target": "ES2019",
+		"target": "ES2020",
 		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 		"lib": ["ESNext"],
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
 		"outDir": "./dist",
 		"strict": true,
-		"moduleResolution": "nodenext",
 		"verbatimModuleSyntax": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
