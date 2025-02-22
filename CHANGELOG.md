@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.0.4
+
+[compare changes](https://github.com/fearandesire/resolve-team/compare/v2.0.3...v2.0.4)
+
+### 💅 Refactors
+
+- Add compatbility for cjs with pkgroll ([#2](https://github.com/fearandesire/resolve-team/pull/2))
+
+### ❤️ Contributors
+
+- FENIX ([@fearandesire](http://github.com/fearandesire))
+
 ## v2.0.3
 
 [compare changes](https://github.com/fearandesire/resolve-team/compare/v2.0.2-0...v2.0.3)
