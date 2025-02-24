@@ -44,7 +44,7 @@ importers:
         version: 15.4.3
       pkgroll:
         specifier: ^2.10.0
-        version: 2.10.0(typescript@5.7.3)
+        version: 2.11.0(typescript@5.7.3)
       release-it:
         specifier: ^18.1.2
         version: 18.1.2(@types/node@22.13.4)(typescript@5.7.3)
@@ -1822,8 +1822,8 @@ packages:
     resolution: {integrity: sha512-E1b1lFFLvLgak2whF2xDBcOy6NLVGZBqqjJjsIhvopKfWWEi64pLVTWWehV8KlLerZkfNTA95sTe2OdJKm1OzQ==}
     engines: {node: '>= 14'}
 
-  giget@1.2.4:
-    resolution: {integrity: sha512-Wv+daGyispVoA31TrWAVR+aAdP7roubTPEM/8JzRnqXhLbdJH0T9eQyXVFF8fjk3WKTsctII6QcyxILYgNp2DA==}
+  giget@1.2.5:
+    resolution: {integrity: sha512-r1ekGw/Bgpi3HLV3h1MRBIlSAdHoIMklpaQ3OQLFcRw9PwAj2rqigvIbg+dBUI51OxVI2jsEtDywDBjSiuf7Ug==}
     hasBin: true
 
   git-up@8.0.1:
@@ -2395,8 +2395,8 @@ packages:
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
-  pkgroll@2.10.0:
-    resolution: {integrity: sha512-v9LPi6fXnbs6FeR67to3Q+LWSamBSKNYUGiXRYcetI41KVgv+ncxwNVyF9oT2mvhy8L2DjEWT2HmX3xxQXmwHg==}
+  pkgroll@2.11.0:
+    resolution: {integrity: sha512-DcgZn6wGAIiGek81FcBohpwiYNmRqkzYSGsgOPznoPIcRl47Vv4dLhcaGGNHtQBK5iOgUjH1jlieWknzLsh1yg==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -4289,7 +4289,7 @@ snapshots:
       confbox: 0.1.8
       defu: 6.1.4
       dotenv: 16.4.7
-      giget: 1.2.4
+      giget: 1.2.5
       jiti: 1.21.7
       mlly: 1.7.4
       ohash: 1.1.4
@@ -4661,14 +4661,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  giget@1.2.4:
+  giget@1.2.5:
     dependencies:
       citty: 0.1.6
       consola: 3.4.0
       defu: 6.1.4
       node-fetch-native: 1.6.6
       nypm: 0.5.4
-      ohash: 1.1.4
       pathe: 2.0.3
       tar: 6.2.1
 
@@ -5198,7 +5197,7 @@ snapshots:
       mlly: 1.7.4
       pathe: 2.0.3
 
-  pkgroll@2.10.0(typescript@5.7.3):
+  pkgroll@2.11.0(typescript@5.7.3):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.34.8)
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.34.8)
