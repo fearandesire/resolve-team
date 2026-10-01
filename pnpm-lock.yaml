@@ -44,19 +44,19 @@ importers:
         version: 15.4.3
       pkgroll:
         specifier: ^2.10.0
-        version: 2.10.0(typescript@5.7.3)
+        version: 2.10.0(typescript@5.9.3)
       release-it:
         specifier: ^18.1.2
-        version: 18.1.2(@types/node@22.13.4)(typescript@5.7.3)
+        version: 18.1.2(@types/node@22.13.4)(typescript@5.9.3)
       release-it-changelogen:
         specifier: ^0.1.0
-        version: 0.1.0(changelogen@0.5.7)(release-it@18.1.2(@types/node@22.13.4)(typescript@5.7.3))(semver@7.7.1)
+        version: 0.1.0(changelogen@0.5.7)(release-it@18.1.2(@types/node@22.13.4)(typescript@5.9.3))(semver@7.7.1)
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
       typescript:
         specifier: ^5.7.3
-        version: 5.7.3
+        version: 5.9.3
       vitest:
         specifier: ^3.0.6
         version: 3.0.6(@types/node@22.13.4)(jiti@1.21.7)(tsx@4.19.3)(yaml@2.9.1)
@@ -2844,8 +2844,8 @@ packages:
     resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
     engines: {node: '>=16'}
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4647,14 +4647,14 @@ snapshots:
     dependencies:
       browserslist: 4.24.4
 
-  cosmiconfig@9.0.0(typescript@5.7.3):
+  cosmiconfig@9.0.0(typescript@5.9.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.9.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -5464,7 +5464,7 @@ snapshots:
       mlly: 1.8.2
       pathe: 2.0.3
 
-  pkgroll@2.10.0(typescript@5.7.3):
+  pkgroll@2.10.0(typescript@5.9.3):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.34.8)
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.34.8)
@@ -5478,7 +5478,7 @@ snapshots:
       rollup: 4.34.8
       rollup-pluginutils: 2.8.2
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.9.3
 
   postcss@8.5.3:
     dependencies:
@@ -5570,7 +5570,7 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  release-it-changelogen@0.1.0(changelogen@0.5.7)(release-it@18.1.2(@types/node@22.13.4)(typescript@5.7.3))(semver@7.7.1):
+  release-it-changelogen@0.1.0(changelogen@0.5.7)(release-it@18.1.2(@types/node@22.13.4)(typescript@5.9.3))(semver@7.7.1):
     dependencies:
       chalk: 5.4.1
       changelogen: 0.5.7
@@ -5578,18 +5578,18 @@ snapshots:
       dotenv: 16.4.7
       execa: 8.0.1
       pathe: 1.1.2
-      release-it: 18.1.2(@types/node@22.13.4)(typescript@5.7.3)
+      release-it: 18.1.2(@types/node@22.13.4)(typescript@5.9.3)
       semver: 7.7.1
       yargs-parser: 21.1.1
 
-  release-it@18.1.2(@types/node@22.13.4)(typescript@5.7.3):
+  release-it@18.1.2(@types/node@22.13.4)(typescript@5.9.3):
     dependencies:
       '@iarna/toml': 2.2.5
       '@octokit/rest': 21.0.2
       async-retry: 1.3.3
       chalk: 5.4.1
       ci-info: 4.1.0
-      cosmiconfig: 9.0.0(typescript@5.7.3)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
       execa: 9.5.2
       git-url-parse: 16.0.0
       globby: 14.0.2
@@ -5820,7 +5820,7 @@ snapshots:
 
   type-fest@4.35.0: {}
 
-  typescript@5.7.3: {}
+  typescript@5.9.3: {}
 
   ufo@1.6.4: {}
 
