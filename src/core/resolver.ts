@@ -94,16 +94,20 @@ export class TeamResolver {
 			throw new Error(invalidInput)
 		}
 
-		const fuse = await this.getFuseInstance(finalOptions)
-		const result = fuse.search(query)
-
-		// Return null if no matches found
-		if (result.length === 0) {
-			return null
-		}
-
-		// Safely extract the first match, handling potential undefined
-		const item = result[0]?.item
+		// Official abbreviations can be shorter than Fuse's fuzzy match minimum.
+		const sport = finalOptions.sport?.toLowerCase()
+		const normalizedQuery = query.toLowerCase()
+		const teams: Team[] = Object.values(teamList).flat()
+		const exactAbbreviation = teams.find(
+			(team) =>
+				(!sport || sport === 'all' || team.sport === sport) &&
+				team.abbrev.some(
+					(abbrev) => abbrev.toLowerCase() === normalizedQuery,
+				),
+		)
+		const item =
+			exactAbbreviation ??
+			(await this.getFuseInstance(finalOptions)).search(query)[0]?.item
 		if (!item) {
 			return null
 		}
