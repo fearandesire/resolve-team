@@ -64,7 +64,7 @@
 		"@tsconfig/node19": "^19.1.5",
 		"@tsconfig/recommended": "^1.0.8",
 		"@tsconfig/strictest": "^2.0.5",
-		"@types/node": "^20.19.43",
+		"@types/node": "^26.6.5",
 		"@typescript/typescript6": "^6",
 		"lefthook": "^2.1.14",
 		"lint-staged": "^16.4.0",
