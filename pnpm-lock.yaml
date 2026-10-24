@@ -26,7 +26,7 @@ importers:
         version: 1.9.4
       '@tsconfig/node19':
         specifier: ^19.1.5
-        version: 19.1.5
+        version: 19.1.11
       '@tsconfig/recommended':
         specifier: ^1.0.8
         version: 1.0.8
@@ -1427,8 +1427,8 @@ packages:
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
-  '@tsconfig/node19@19.1.5':
-    resolution: {integrity: sha512-dgXw9wSRjfmHSu1THzmkouix4afgoHOi3mzsVnheNteYY3SRXhSkb9b9zTMhVCUYHv+Gu8w/NZKmw+pOktQtRQ==}
+  '@tsconfig/node19@19.1.11':
+    resolution: {integrity: sha512-pl1gwjdwWxLePGvt+oGLr3eUOX9pqciK074WaqySLXGYc1dKzVSOsLLwmf/sKEjwJAaPsravOVqZ29r2c430Aw==}
 
   '@tsconfig/recommended@1.0.8':
     resolution: {integrity: sha512-TotjFaaXveVUdsrXCdalyF6E5RyG6+7hHHQVZonQtdlk1rJZ1myDIvPUUKPhoYv+JAzThb2lQJh9+9ZfF46hsA==}
@@ -4429,7 +4429,7 @@ snapshots:
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
-  '@tsconfig/node19@19.1.5': {}
+  '@tsconfig/node19@19.1.11': {}
 
   '@tsconfig/recommended@1.0.8': {}
 
