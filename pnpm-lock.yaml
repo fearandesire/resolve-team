@@ -36,6 +36,9 @@ importers:
       '@types/node':
         specifier: ^20.19.43
         version: 20.19.43
+      '@typescript/typescript6':
+        specifier: ^6
+        version: 6.0.2
       lefthook:
         specifier: ^2.1.14
         version: 2.1.16
@@ -44,7 +47,7 @@ importers:
         version: 16.4.0
       pkgroll:
         specifier: ^2.10.0
-        version: 2.28.1(typescript@7.0.2)(vite@7.3.6(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1))
+        version: 2.28.1(@typescript/typescript6@6.0.2)(typescript@7.0.2)(vite@7.3.6(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1))
       release-it:
         specifier: ^18.1.2
         version: 18.1.2(@types/node@20.19.43)(typescript@7.0.2)
@@ -1423,6 +1426,10 @@ packages:
     engines: {node: '>=16.20.0'}
     cpu: [x64]
     os: [win32]
+
+  '@typescript/typescript6@6.0.2':
+    resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
+    hasBin: true
 
   '@vitest/expect@3.2.6':
     resolution: {integrity: sha512-1+7q9BtaKzEmO+fmNT3kYvoNn5Y71XWAx2Q5HRim4tTVRQVRv4uJFAQ5FbK0OPUeNP/WmVCpxYxoJdvuHVjzBQ==}
@@ -2874,6 +2881,11 @@ packages:
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
+
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   typescript@7.0.2:
     resolution: {integrity: sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==}
@@ -4396,6 +4408,10 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
+  '@typescript/typescript6@6.0.2':
+    dependencies:
+      '@typescript/old': typescript@6.0.3
+
   '@vitest/expect@3.2.6':
     dependencies:
       '@types/chai': 5.2.3
@@ -5470,7 +5486,7 @@ snapshots:
       mlly: 1.8.2
       pathe: 2.0.3
 
-  pkgroll@2.28.1(typescript@7.0.2)(vite@7.3.6(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1)):
+  pkgroll@2.28.1(@typescript/typescript6@6.0.2)(typescript@7.0.2)(vite@7.3.6(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1)):
     dependencies:
       '@rollup/plugin-alias': 6.0.0(rollup@4.63.6)
       '@rollup/plugin-commonjs': 29.0.3(rollup@4.63.6)
@@ -5486,6 +5502,7 @@ snapshots:
       signal-exit: 4.1.0
       yaml: 2.9.1
     optionalDependencies:
+      '@typescript/typescript6': 6.0.2
       typescript: 7.0.2
     transitivePeerDependencies:
       - vite
@@ -5855,6 +5872,8 @@ snapshots:
   type-fest@2.19.0: {}
 
   type-fest@4.41.0: {}
+
+  typescript@6.0.3: {}
 
   typescript@7.0.2:
     optionalDependencies:
