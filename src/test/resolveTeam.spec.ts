@@ -96,6 +96,31 @@ describe('TeamResolver functionality', () => {
 		)
 	})
 
+	test('resolves short official abbreviations at strict and default thresholds', async () => {
+		for (const sport of Object.keys(teamList) as (keyof TeamList)[]) {
+			for (const team of teamList[sport]) {
+				for (const abbrev of team.abbrev.filter(
+					(value) => value.length < 3,
+				)) {
+					for (const threshold of [0, 0.4]) {
+						expect(
+							await teamResolver.resolve(abbrev.toLowerCase(), {
+								sport: team.sport,
+								threshold,
+								full: true,
+							}),
+						).toEqual(team)
+					}
+				}
+			}
+		}
+		expect(await teamResolver.resolve('SF', { sport: 'NBA' })).toBeNull()
+		expect(await teamResolver.resolve('zz')).toBeNull()
+		expect(
+			await teamResolver.compare('sf', '49ers', { sport: 'nfl' }),
+		).toBe(true)
+	})
+
 	test('handles sport-specific searches - basic', async () => {
 		expect(await teamResolver.resolve('nyg', { sport: 'nfl' })).toBe(
 			'New York Giants',
