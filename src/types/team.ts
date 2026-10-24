@@ -63,4 +63,4 @@ interface ITeamList {
 	nfl: Team[]
 }
 
-export type { Team, ITeamList as TeamList }
+export type { ITeamList as TeamList, Team }

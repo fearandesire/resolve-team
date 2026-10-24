@@ -1,6 +1,6 @@
 import type Fuse from 'fuse.js'
 import teamList from '../data/teamlist.js'
-import { type Options, defaultOptions } from '../types/options.js'
+import { defaultOptions, type Options } from '../types/options.js'
 import type { Team, TeamList } from '../types/team.js'
 import { initializeFuse } from '../utils/search.js'
 import { listValidSports, validateInputs } from '../utils/validation.js'

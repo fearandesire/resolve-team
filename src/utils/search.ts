@@ -1,10 +1,10 @@
 import Fuse, { type IFuseOptions } from 'fuse.js'
 import teamList from '../data/teamlist.js'
 import {
+	defaultOptions,
 	type Options,
 	type Team,
 	type TeamList,
-	defaultOptions,
 } from '../types/index.js'
 
 /**

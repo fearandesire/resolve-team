@@ -81,5 +81,5 @@ const defaultOptions: Options = {
 	full: false,
 }
 
-export { defaultOptions }
 export type { Options }
+export { defaultOptions }
