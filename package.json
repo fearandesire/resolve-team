@@ -67,7 +67,7 @@
 		"@types/node": "^26.6.5",
 		"@typescript/typescript6": "^6",
 		"lefthook": "^2.1.14",
-		"lint-staged": "^16.4.0",
+		"lint-staged": "^17.6.0",
 		"pkgroll": "^2.10.0",
 		"release-it": "^21.1.1",
 		"release-it-changelogen": "^0.1.0",
