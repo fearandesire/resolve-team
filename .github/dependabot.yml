@@ -17,6 +17,12 @@ updates:
       prefix: "chore"
       prefix-development: "chore"
       include: "scope"
+    # Majors only: minor and patch version updates are not worth a PR.
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -28,3 +34,9 @@ updates:
     commit-message:
       prefix: "ci"
       include: "scope"
+    # Majors only: minor and patch version updates are not worth a PR.
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
